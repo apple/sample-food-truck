@@ -1,0 +1,34 @@
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A localization file.
+*/
+
+/* No comment provided by engineer. */
+"8 out of 10 cats!" = "8 من 10!";
+
+/* No comment provided by engineer. */
+"Daily Donut" = "دونت يومية";
+
+/* No comment provided by engineer. */
+"Information about Food Truck's orders and daily quotas." = "معلومات حول طلبات عربة المأكولات والكميات اليومية.";
+
+/* No comment provided by engineer. */
+"Information about your Food Truck's parking spot." = "معلومات حول مكان رَكْن عربة المأكولات.";
+
+/* No comment provided by engineer. */
+"Orders" = "الطلبات";
+
+/* No comment provided by engineer. */
+"Parking Spot" = "مكان الرَّكْن";
+
+/* No comment provided by engineer. */
+"Showcasing the latest trending donuts." = "يعرض أكثر الدوناتس طلبًا مؤخرًا.";
+
+/* No comment provided by engineer. */
+"Trend Data..." = "بيانات الأداء...";
+
+/* No comment provided by engineer. */
+"Unsupported!" = "غير مدعوم!";
+

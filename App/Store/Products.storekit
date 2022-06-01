@@ -1,0 +1,141 @@
+{
+  "identifier" : "8165582C",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "675D220E",
+      "localizations" : [
+        {
+          "description" : "Data and insights that cover an entire year",
+          "displayName" : "Full year of history",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "بيانات ومعلومات تغطي عامًا كاملًا",
+          "displayName" : "سجل تاريخ لمدة عام",
+          "locale" : "ar"
+        }
+      ],
+      "productID" : "feature.annualhistory",
+      "referenceName" : "Annual History",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_billingGracePeriodEnabled" : false,
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "USA",
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "20947887",
+      "localizations" : [
+
+      ],
+      "name" : "Social Feed+",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+            {
+              "eligibility" : [
+                "existing",
+                "new",
+                "expired"
+              ],
+              "internalID" : "4E17DFC7",
+              "isStackable" : true,
+              "paymentMode" : "free",
+              "referenceName" : "Free month",
+              "subscriptionPeriod" : "P1M"
+            }
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "AF07A068",
+          "introductoryOffer" : {
+            "displayPrice" : "2.49",
+            "internalID" : "46C5A1A9",
+            "numberOfPeriods" : 3,
+            "paymentMode" : "payAsYouGo",
+            "subscriptionPeriod" : "P1M"
+          },
+          "localizations" : [
+            {
+              "description" : "Access advanced social-feed tools",
+              "displayName" : "Social Feed+ Monthly Plan",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "احصل على أدوات موجز اجتماعي متقدمة",
+              "displayName" : "الموجز الاجتماعي + الباقة الشه",
+              "locale" : "ar"
+            }
+          ],
+          "productID" : "socialfeedplus.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Social Feed+ (Monthly)",
+          "subscriptionGroupID" : "20947887",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+            {
+              "displayPrice" : "29.99",
+              "eligibility" : [
+                "new"
+              ],
+              "internalID" : "A7C553E1",
+              "isStackable" : false,
+              "paymentMode" : "payUpFront",
+              "referenceName" : "Half off first year",
+              "subscriptionPeriod" : "P1Y"
+            }
+          ],
+          "displayPrice" : "49.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "24617969",
+          "introductoryOffer" : {
+            "displayPrice" : "8.99",
+            "internalID" : "724E07AE",
+            "paymentMode" : "payUpFront",
+            "subscriptionPeriod" : "P3M"
+          },
+          "localizations" : [
+            {
+              "description" : "Advanced tools at a greater value",
+              "displayName" : "Social Feed+ Yearly Plan",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "أدوات متطورة مفيدة أكثر",
+              "displayName" : "الموجز الاجتماعي + الباقة السن",
+              "locale" : "ar"
+            }
+          ],
+          "productID" : "socialfeedplus.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Social Feed+ (Yearly)",
+          "subscriptionGroupID" : "20947887",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

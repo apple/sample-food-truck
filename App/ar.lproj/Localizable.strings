@@ -1,0 +1,556 @@
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A localization file.
+*/
+
+/* Order status. */
+"%@ completed!" = "%@ مكتمل!";
+
+/* A label indicating the total number of donuts sold. */
+"%@ donuts" = "%@ من الدونات";
+
+/* Number of donuts. */
+"%@ Donuts" = "%@ من الدونات";
+
+/* No comment provided by engineer. */
+"%@ for %@ on %@" = "%@ لـ  %@ في %@";
+
+/* Intents. Donut-charts label, top donuts. */
+"%@ Trends for %@" = "%@ أفضل الدونات لـ %@";
+
+/* No comment provided by engineer. */
+"%@, %@" = "%@، %@";
+
+/* Farenheit temperature indicator. */
+"%@°F" = "%@° ف";
+
+/* No comment provided by engineer. */
+"•" = "•";
+
+/* Filter sales history by the last two weeks. */
+"2 Weeks" = "أسبوعان";
+
+/* No comment provided by engineer. */
+"200 Wide" = "عرض ٢٠٠";
+
+/* Social-feed tag. */
+"A cool tag" = "وسم لطيف";
+
+/* In-app purchases content. Monthly subscription description. */
+"Access advanced social-feed tools" = "احصل على أدوات موجز اجتماعي متقدمة";
+
+/* A navigation label title for the user account. */
+"Account" = "الحساب";
+
+/* Toggle button to enable/disable the use of advanced engagement tools. */
+"Advanced engagement tools" = "أدوات تفاعل متقدمة";
+
+/* In-app purchases content. Benefits description. */
+"Advanced engagement tools." = "أدوات تفاعل متقدمة.";
+
+/* In-app purchases content. Yearly subscription description. */
+"Advanced tools at a greater value" = "أدوات متطورة مفيدة أكثر";
+
+/* In-app purchases content. Benefits description. */
+"All in one place." = "كل شيء في مكان واحد.";
+
+/* Social-feed tag. */
+"And away we go!" = "وسنذهب بالتأكيد!";
+
+/* Sign-out confirmation label. */
+"Are you sure you want to sign out?" = "هل ترغب بالتأكيد في الخروج؟";
+
+/* No comment provided by engineer. */
+"Beautiful Map Goes Here" = "خريطة جميلة هنا";
+
+/* Social-feed tag. */
+"Bunnies of Social Feed" = "أرانب الموجز الاجتماعي";
+
+/* Button title. */
+"Cancel" = "إلغاء";
+
+/* Social-feed tag. */
+"Carrot" = "جزر";
+
+/* Social-feed tag. */
+"Carrots" = "جزر";
+
+/* Social-feed tag. */
+"Carrots of Social Feed" = "جزرات الموجز الاجتماعي";
+
+/* Social-feed tag. */
+"Chocolate!!!" = "شوكولاتة!";
+
+/* A view-disclosure title. */
+"Cities" = "المدن";
+
+/* Label describing the cloud-cover percentage at the parking spot. */
+"Cloud cover percentage is currently %@%% in %@" = "نسبة الغيوم حاليًا %@٪ في %@";
+
+/* Button title, marks order as complete. */
+"Complete Order" = "طلب مكتمل";
+
+/* Button title. */
+"Create Donut" = "إنشاء دونات";
+
+/* Social-feed tag. */
+"Dairy Free" = "خالٍ من مشتقات الألبان";
+
+/* In-app purchases content. Yearly history offer description. */
+"Data and insights that cover an entire year" = "بيانات ومعلومات تغطي عامًا كاملًا";
+
+/* Label chart axis. */
+"Date" = "التاريخ";
+
+/* Date label used to display or filter content by date. */
+"Day" = "اليوم";
+
+/* No comment provided by engineer. */
+"Detail!" = "تفاصيل!";
+
+/* Table column title. */
+"Details" = "التفاصيل";
+
+/* Dimiss button. */
+"Dismiss" = "استبعاد";
+
+/* Social-feed content. */
+"Do you think there are any donuts in space?" = "ترى، هل يوجد دونات في الفضاء؟";
+
+/* Button title, dismiss order complete view. */
+"Done" = "تم";
+
+/* Label title */
+"Donut" = "دونات";
+
+/* A view title. */
+"Donut Editor" = "تعديل الدونات";
+
+/* Donut editor name placeholder. */
+"Donut Name" = "اسم الدونات";
+
+/* No comment provided by engineer. */
+"Donut stuff!" = "أشياء للدونات!";
+
+/* Social-feed tag. */
+"Donut vs Doughnut" = "دونت مقابل دونات ";
+
+/* A view title. */
+"Donuts" = "دونات";
+
+/* Social-feed tag. */
+"Donuts for Bunnies" = "دونات للأرانب";
+
+/* Social-feed tag. */
+"Donuts for one" = "دونات لشخص واحد";
+
+/* Label indicating when a subscription will expire. */
+"Expires on %@" = "تنتهي الصلاحية في %@";
+
+/* A label title to sort donuts by flavor. */
+"Flavor" = "النكهة";
+
+/* A label title to indicate the flavor-profile of a donut. */
+"Flavor Profile" = "ملف تعريف النكهة";
+
+/* The app name. */
+"Food Truck" = "عربة المأكولات";
+
+/* Social-feed tag. */
+"Food Truck sighting" = "أماكن عربة الطعام";
+
+/* The condensed app name. */
+"FoodTruck" = "عربة المأكولات";
+
+/* In-app purchases content. Offer label. */
+"for only %@" = "مقابل %@ فقط";
+
+/* The forecast for the current parking lot. */
+"Forecast" = "توقعات";
+
+/* In-app purchases content. Yearly history offer. */
+"Full year of history" = "سجل تاريخ لمدة عام";
+
+/* Button title. */
+"Get Social Feed+" = "جلب الموجز الاجتماعي+ ";
+
+/* Button title, get started with Social Feed+. */
+"Get Started" = "فلنبدأ";
+
+/* Unlock feature-label description. */
+"Get the full picture with data and insights that cover an entire year." = "احصل على فكرة كاملة ببيانات تغطي العام كله.";
+
+/* Social-feed tag. */
+"Gluten Free" = "خالٍ من الغلوتين";
+
+/* Social-feed content. */
+"Hello, this is a preview of a social feed post!" = "مرحبًا، هذه معاينة لمنشور الموجز الاجتماعي!";
+
+/* Navigation title. */
+"Help with purchases" = "مساعدة في الشراء";
+
+/* No comment provided by engineer. */
+"Hey this is a super long string that should get cut off" = "مرحبًا هذه جملة طويلة لعيونك";
+
+/* Toggle button to enable/disable highlighting Social Feed+ posts. */
+"Highlight Social Feed+ posts" = "تمييز  منشورات الموجز الاجتماعي+ ";
+
+/* Section title. */
+"Highlighted Posts" = "المنشورات المميزة";
+
+/* Weather-label axis title. */
+"Hour" = "ساعة";
+
+/* Social-feed content. */
+"How many donuts are too many" = "كم دونات تعد دونات كثيرة.";
+
+/* Social-feed content. */
+"I can't wait for the Food Truck to make its way to London!" = "لا أطيق الانتظار حتى تأتي عربة الدونات إلى لندن!";
+
+/* Social-feed content. */
+"I heard the Food Truck was in Cupertino today! Did anyone get a chance to visit?" = "سمعت أن عربة الطعام في كوبرتينو اليوم! هل زارها أحدكم؟";
+
+/* Social-feed content. */
+"I think I just saw the Food Truck on its way to San Francisco! Taxi, follow that truck!" = "أعتقد أنني رأيت عربة الطعام في طريقها إلى سان فرانسيسكو! تاكسي، فلنلحق بتلك العربة!";
+
+/* Social-feed content. */
+"I'm going to place a huge order next time the Food Truck is in San Francisco!!" = "سأرسل طلبًا كبيرًا في المرة القادمة التي تأتي فيها عربة الطعام إلى سان فرانسيسكو!!";
+
+/* Social-feed content. */
+"I'm really looking forward to trying the new chocolate donuts next time the truck is in town." = "لا أطيق الانتظار لتجربة دونات الشوكولاته في المرة القادمة التي تأتي فيها العربة إلى مدينتنا.";
+
+/* Social-feed tag. */
+"I'm waiting..." = "أنا في الانتظار...";
+
+/* Button title to show the donuts in a grid. */
+"Icons" = "أيقونات";
+
+/* Button alternate title. */
+"In-app purchase support" = "دعم الشراء من داخل التطبيق";
+
+/* Ingredients of a donut. */
+"Ingredients" = "المكونات";
+
+/* Social-feed content. */
+"Just told my coworkers about the Food Truck and we are currently a group of 20 heading out." = "أخبرت زملائي عن عربة الطعام، ونحن الآن متجهون إليها في مجموعة من ٢٠ شخصًا.";
+
+/* Button title, alternate how to view the donut's collection. */
+"Layout" = "التخطيط";
+
+/* Label title, the options on how to view the donut's collection. */
+"Layout Options" = "خيارات التخطيط";
+
+/* Social-feed tag. */
+"Like two dozen!" = "دزِّينتان!";
+
+/* Button title to show the donuts in a list. */
+"List" = "قائمة";
+
+/* Label indicating the city where donuts were sold. */
+"Location" = "الموقع";
+
+/* Navigation title. */
+"Manage Social Feed+" = "إدارة موجز منصات التواصل+";
+
+/* Button title. */
+"Manage subscription" = "إدارة الاشتراك";
+
+/* Social-feed tag. */
+"Many more" = "أخرى كثيرة";
+
+/* Date label used to display or filter content by date. */
+"Month" = "الشهر";
+
+/* No comment provided by engineer. */
+"My Action" = "إجرائي";
+
+/* A label title to sort donuts by name. */
+"Name" = "الاسم";
+
+/* New donut-placeholder name. */
+"New Donut" = "دونات جديدة";
+
+/* Label indicating the new donut orders. */
+"New Orders" = "طلبات جديدة";
+
+/* Button title on donut editor. */
+"next Dough" = "العجينة التالية";
+
+/* Button title on donut editor. */
+"Next Glaze" = "الطبقة التالية";
+
+/* Button title on donut editor. */
+"Next Topping" = "الإضافة التالية";
+
+/* Label indicating the possibility of rain. */
+"No chance of rain today" = "فرصة هطول المطر";
+
+/* This donut doesn't have glaze. */
+"No Glaze" = "لا توجد طبقات";
+
+/* This donut doesn't have toppings. */
+"No Topping" = "دون إضافات";
+
+/* No current subscriptions. */
+"None" = "لا شيء";
+
+/* Social-feed content. */
+"Okay, long day of work complete. Time to grab a bunch of donuts and get out of here!" = "حسنًا، انتهينا من يوم طويل في العمل. حان الآن موعد تناول الدونات والخروج من هنا!";
+
+/* Social-feed content. */
+"Once the Food Truck adds carrot-flavored donuts; I'm going to order a million of them!" = "بمجرد أن تضيف عربة الدونات دونات بنكهات، سأطلب مليون دونات!";
+
+/* Social-feed tag. */
+"One of these days!" = "أحد هذه الأيام!";
+
+/* Label title. */
+"Order" = "طلب";
+
+/* Label indicating when a order was placed. */
+"Order Started" = "بدأ الطلب";
+
+/* A view title. */
+"Orders" = "الطلبات";
+
+/* Link to more weather data. */
+"Other data sources" = "مصادر بيانات أخرى";
+
+/* Parking-spot label. */
+"Parking Spot" = "مكان الركْن";
+
+/* Password textfield. */
+"Password" = "كلمة السر";
+
+/* Button title to apply a bulk action to selected orders. */
+"Perform Action on %lld Orders" = " أداء الإجراء على %lld من طلبات";
+
+/* Social-feed tag. */
+"Please don't tell me" = "لا تخبرني";
+
+/* Label indicating that a parking spot is popular. */
+"Popular" = "المشهورة";
+
+/* Label describing the popular donuts at a parking spot. */
+"Popular donuts this season include Custard, Super Lemon, and Rainbow" = "تتضمن الدونات المشهورة هذا الموسم كل من الكسترد والسوبر ليمون وقوس قزح";
+
+/* A label title to sort donuts by popularity. */
+"Popularity" = "الشهرة";
+
+/* Section title. */
+"Posts" = "المنشورات";
+
+/* Label indicating that the chart is only available for premium users. */
+"Premium Feature" = "ميزة مهمة";
+
+/* Button title on donut editor. */
+"Previous Dough" = "العجينة السابقة";
+
+/* Button title on donut editor. */
+"Previous Glaze" = "الطبقة السابقة";
+
+/* Button title on donut editor. */
+"Previous Topping" = "الإضافة السابقة";
+
+/* Social-feed tag. */
+"Rainbow Sprinkles" = "مرشوش قوس قزح";
+
+/* Parking spot recommendations text. */
+"Recommendation to stock up on cold ingredients and popular toppings to be prepared for the season" = "توصية بشراء مكونات باردة وإضافات مشهورة للتحضر للموسم";
+
+/* Label indicating that parking spot is recommended. */
+"Recommended" = "يوصى به";
+
+/* Button title. */
+"Redeem an offer" = "تحصيل العرض";
+
+/* Button title. */
+"Refund purchases" = "استرداد ثمن المشتريات";
+
+/* A label with the prefix for the subscription plans. */
+"Renews" = "التجديد";
+
+/* A label indicating to which plan the subscription will renew. */
+"Renews to %@" = "التجديد إلى %@";
+
+/* Button title. */
+"Request a refund" = "طلب استرداد مال";
+
+/* Button title. */
+"Restore missing purchases" = "استعادة المشتريات المفقودة";
+
+/* Social-feed tag. */
+"Room Temperature" = "دافئ";
+
+/* Sales-history chart axis label. */
+"Sales" = "المبيعات";
+
+/* A view title. */
+"Sales History" = "سجل المبيعات";
+
+/* Button title. */
+"Select" = "تحديد";
+
+/* Button title. */
+"Select a purchase to refund" = "اختر عملية شراء لاسترداد مال";
+
+/* Section title. */
+"Settings" = "الإعدادات";
+
+/* Intents. Donut-charts label. */
+"Show Top Donuts" = "إظهار أفضل الدونات";
+
+/* Button title. */
+"Sign In" = "تسجيل الدخول";
+
+/* Button title. */
+"Sign Out" = "تسجيل الخروج";
+
+/* Button title. */
+"Sign Up" = "التسجيل";
+
+/* Button title. */
+"Sign Up with Passkey" = "التسجيل باستخدام مفتاح مرور";
+
+/* Button title. */
+"Sign Up with Password" = "التسجيل باستخدام كلمة سر";
+
+/* Navigation title. */
+"Social Feed" = "موجز الموجز الاجتماعي";
+
+/* Navigation title. */
+"Social Feed%@" = "الموجز الاجتماعي %@";
+
+/* A label title. */
+"Social Feed+" = "الموجز الاجتماعي+";
+
+/* In-app purchases content. Monthly subscription title. */
+"Social Feed+ Monthly Plan" = "الموجز الاجتماعي + الباقة الشهرية";
+
+/* In-app purchases content. Yearly subscription title. */
+"Social Feed+ Yearly Plan" = "الموجز الاجتماعي + الباقة السنوية";
+
+/* Navigation title. */
+"Social-media providers" = "مزودي منصات التواصل الاجتماعي";
+
+/* A button title, sorts donuts by different categories. */
+"Sort" = "فرز";
+
+/* Social-feed tag. */
+"Space" = "الفضاء";
+
+/* No comment provided by engineer. */
+"Standard" = "القياسية ";
+
+/* A button title. */
+"Start trial offer" = "بدء عرض التجربة";
+
+/* A label indicating the order status. */
+"Status" = "الحالة";
+
+/* Button title. */
+"Subscribe" = "الاشتراك";
+
+/* Label title describing the possible subscription options. */
+"Subscription Options" = "خيارات الاشتراك";
+
+/* Button title. */
+"Subscription support" = "دعم الاشتراك";
+
+/* The current temperature at the parking spot. */
+"Temperature" = "درجة الحرارة";
+
+/* Subtitle to Subscribe button . */
+"The definitive social-feed experience" = "أفضل تجربة لموجز منصات التواصل الاجتماعي";
+
+/* Social-feed content. */
+"Thinking of checking out the Food Truck in its new location in SF today, anyone else down?" = "أفكر في زيارة عربة الدونات في مكانها الجديد في سان فرانسيسكو اليوم، هل يريد أحد أن يأتي معي؟";
+
+/* Intents. Donut-charts label, period of time to filter by month. */
+"This Month" = "هذا الشهر";
+
+/* Intents. Donut-charts label, period of time to filter by week. */
+"This Week" = "هذا الأسبوع";
+
+/* Intents. Donut-charts label, period of time to filter by year. */
+"This Year" = "هذه السنة";
+
+/* Intents. Donut-charts label. */
+"Timeframe" = "الإطار الزمني";
+
+/* No comment provided by engineer. */
+"Title 3" = "";
+
+/* Date label used to display or filter content by date. */
+"Today" = "اليوم";
+
+/* The title of view where the top 5 donuts are ranked. */
+"Top 5" = "أفضل ٥";
+
+/* Navigation title. */
+"Top 5 Donuts" = "أفضل ٥ أنواع دونات";
+
+/* In-app purchases content. Benefits description. */
+"Top social-media providers." = "أفضل مزودي منصات التواصل الاجتماعية";
+
+/* Label indicating the amount of donuts in an order. */
+"Total Donuts" = "كل الدوناتس";
+
+/* A label indicating the total number of sales. */
+"Total Sales" = "إجمالي المبيعات";
+
+/* Label indicating that parking spot is trending. */
+"Trending" = "الشائعة";
+
+/* The current trending topics in the social-feed. */
+"Trending Topics" = "المواضيع الرائجة";
+
+/* Social-feed content. */
+"Trick question" = "سؤال فيه خدعة";
+
+/* A view title. */
+"Truck" = "عربة";
+
+/* Social-feed tag. */
+"Unless...?" = "إلا...؟";
+
+/* A button to unlock chart details. */
+"Unlock" = "فتح القفل";
+
+/* A button to unlock chart details per offer. */
+"Unlock a %@" = "فتح قفل %@";
+
+/* A button to unlock chart details per offer, per price. */
+"Unlock a %@ for only %@" = "فتح قفل %@ لـ %@ فقط";
+
+/* Username textfield placeholder. */
+"User name" = "اسم المستخدم(ة)";
+
+/* View order details. */
+"View Details" = "عرض التفاصيل";
+
+/* Social-feed tag. */
+"Warmed Up" = "ساخنة";
+
+/* Date label used to display or filter content by date. */
+"Week" = "الأسبوع";
+
+/* Label explaning how the passkey sign up works. */
+"When you sign up with a passkey, all you need is a user name. The passkey will be available on all of your devices." = "عند تسجيل الدخول باستخدام مفتاح المرور، كل ما تحتاجه هو اسم المستخدم. مفتاح المرور سيكون متاحًا على جميع أجهزتك.";
+
+/* Label indicating the possibility of rain. */
+"Will rain soon..." = "ستمطر قريبًا...";
+
+/* No comment provided by engineer. */
+"X Large Type" = "نوع كبير";
+
+/* Date label used to display or filter content by date. */
+"Year" = "السنة";
+
+/* Date label used to display or filter content by date. */
+"Yesterday" = "بالأمس";
+
+/* Section title. */
+"Your subscription" = "اشتراكك";
+

@@ -1,0 +1,427 @@
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+A localization file.
+*/
+
+/* Order status. */
+"%@ completed!" = "%@ completed!";
+
+/* A label indicating the total number of donuts sold. */
+"%@ donuts" = "%@ donuts";
+
+/* Number of donuts. */
+"%@ Donuts" = "%@ donuts";
+
+/* Intents. Donut-charts label, trends. */
+"%@ Trends for %@" = "%@ Trends for %@";
+
+/* Farenheit temperature indicator. */
+"%@°F" = "%@°F";
+
+/* No comment provided by engineer. */
+"•" = "•";
+
+/* Filter sales history by the last two weeks. */
+"2 Weeks" = "2 Weeks";
+
+/* No comment provided by engineer. */
+"200 Wide" = "200 Wide";
+
+/* In-app purchases content. Monthly subscription description. */
+"Access advanced social-feed tools" = "Access advanced social-feed tools";
+
+/* A navigation label title for the user account. */
+"Account" = "Account";
+
+/* Toggle button to enable/disable the use of advanced engagement tools. */
+"Advanced engagement tools" = "Advanced engagement tools";
+
+/* In-app purchases content. Benefits description. */
+"Advanced engagement tools." = "Advanced engagement tools.";
+
+/* In-app purchases content. Yearly subscription description. */
+"Advanced tools at a greater value" = "Advanced tools at a greater value";
+
+/* In-app purchases content. Benefits description. */
+"All in one place." = "All in one place.";
+
+/* Sign-out confirmation label. */
+"Are you sure you want to sign out?" = "Are you sure you want to sign out?";
+
+/* No comment provided by engineer. */
+"Beautiful Map Goes Here" = "Beautiful Map Goes Here";
+
+/* Button title. */
+"Cancel" = "Cancel";
+
+/* Social-feed tag. */
+"Carrots" = "Carrots";
+
+/* A view-disclosure title. */
+"Cities" = "Cities";
+
+/* Button title, marks order as complete. */
+"Complete Order" = "Complete Order";
+
+/* Button title. */
+"Create Donut" = "Create Donut";
+
+/* Social-feed tag. */
+"Dairy Free" = "Dairy Free";
+
+/* In-app purchases content. Yearly history offer description. */
+"Data and insights that cover an entire year" = "Data and insights that cover an entire year";
+
+/* Label chart axis. */
+"Date" = "Date";
+
+/* Button title to filter the best-selling donuts per day. */
+"Day" = "Day";
+
+/* No comment provided by engineer. */
+"Detail!" = "Detail!";
+
+/* Table column title. */
+"Details" = "Details";
+
+/* Dimiss button. */
+"Dismiss" = "Dismiss";
+
+/* Button title, dismiss order complete view. */
+"Done" = "Done";
+
+/* A view title. */
+"Donut Editor" = "Donut Editor";
+
+/* Donut editor name placeholder. */
+"Donut Name" = "Donut Name";
+
+/* No comment provided by engineer. */
+"Donut stuff!" = "Donut stuff!";
+
+/* Social-feed tag. */
+"Donut vs Doughnut" = "Donut vs Doughnut";
+
+/* A view title. */
+"Donuts" = "Donuts";
+
+/* A label title to sort donuts by flavor. */
+"Flavor" = "Flavor";
+
+/* A label title to indicate the flavor-profile of a donut. */
+"Flavor Profile" = "Flavor Profile";
+
+/* The app name. */
+"Food Truck" = "Food Truck";
+
+/* The condensed app name. */
+"FoodTruck" = "FoodTruck";
+
+/* Social-feed tag. */
+"Food Truck sighting" = "Food Truck sighting";
+
+/* In-app purchases content. Offer label. */
+"for only %@" = "for only %@";
+
+/* The forecast for the current parking lot. */
+"Forecast" = "Forecast";
+
+/* In-app purchases content. Yearly history offer. */
+"Full year of history" = "Full year of history";
+
+/* Button title. */
+"Get Social Feed+" = "Get Social Feed+";
+
+/* Button title, get started with Social Feed+. */
+"Get Started" = "Get Started";
+
+/* Unlock feature-label description . */
+"Get the full picture with data and insights that cover an entire year." = "Get the full picture with data and insights that cover an entire year.";
+
+/* Social-feed tag. */
+"Gluten Free" = "Gluten Free";
+
+/* Navigation title. */
+"Help with purchases" = "Help with purchases";
+
+/* No comment provided by engineer. */
+"Hey this is a super long string that should get cut off" = "Hey this is a super long string that should get cut off";
+
+/* Toggle button to enable/disable highlighting Social Feed+ posts. */
+"Highlight Social Feed+ posts" = "Highlight Social Feed+ posts";
+
+/* Weather-label axis title. */
+"Hour" = "Hour";
+
+/* Button title, show the donuts in a grid. */
+"Icons" = "Icons";
+
+/* Social-feed tag. */
+"I'm waiting..." = "I'm waiting...";
+
+/* Button alternate title. */
+"In-app purchase support" = "In-app purchase support";
+
+/* Ingredients of a donut. */
+"Ingredients" = "Ingredients";
+
+/* Button title, alternate how to view the donut's collection. */
+"Layout" = "Layout";
+
+/* Label title, alternate how to view the donut's collection. */
+"Layout Options" = "Layout Options";
+
+/* Button title, show the donuts in a list. */
+"List" = "List";
+
+/* Label indicating the city where donuts were sold. */
+"Location" = "Location";
+
+/* Navigation title. */
+"Manage Social Feed+" = "Manage Social Feed+";
+
+/* Button title. */
+"Manage subscription" = "Manage subscription";
+
+/* Date label used to display or filter content by date. */
+"Month" = "Month";
+
+/* No comment provided by engineer. */
+"My Action" = "My Action";
+
+/* A label title to sort donuts by name. */
+"Name" = "Name";
+
+/* New donut-placeholder name. */
+"New Donut" = "New Donut";
+
+/* Label indicating the new donut orders. */
+"New Orders" = "New Orders";
+
+/* Button title on donut editor. */
+"next Dough" = "next Dough";
+
+/* Button title on donut editor. */
+"Next Glaze" = "Next Glaze";
+
+/* Button title on donut editor. */
+"Next Topping" = "Next Topping";
+
+/* Label indicating the possibility of rain. */
+"No chance of rain today" = "No chance of rain today";
+
+/* This donut doesn't have glaze. */
+"No Glaze" = "No Glaze";
+
+/* No current subscriptions. */
+"None" = "None";
+
+/* Social-feed tag. */
+"One of these days!" = "One of these days!";
+
+/* Label title. */
+"Order" = "Order";
+
+/* Label indicating when a order was placed. */
+"Order Started" = "Order Started";
+
+/* A view title. */
+"Orders" = "Orders";
+
+/* Parking-spot label. */
+"Parking Spot" = "Parking Spot";
+
+/* Password textfield. */
+"Password" = "Password";
+
+/* Button title to apply a bulk action to selected orders. */
+"Perform Action on %lld Orders" = "Perform Action on %lld Orders";
+
+/* Label indicating that parking spot is popular. */
+"Popular" = "Popular";
+
+/* A label title to sort donuts by popularity. */
+"Popularity" = "Popularity";
+
+/* Label indicating that the chart is only available for premium users. */
+"Premium Feature" = "Premium Feature";
+
+/* Button title on donut editor. */
+"Previous Dough" = "Previous Dough";
+
+/* Button title on donut editor. */
+"Previous Glaze" = "Previous Glaze";
+
+/* Button title on donut editor. */
+"Previous Topping" = "Previous Topping";
+
+/* Social-feed tag. */
+"Rainbow Sprinkles" = "Rainbow Sprinkles";
+
+/* Label indicating that parking spot is recommended. */
+"Recommended" = "Recommended";
+
+/* Button title. */
+"Redeem an offer" = "Redeem an offer";
+
+/* Button title. */
+"Refund purchases" = "Refund purchases";
+
+/* Button title. */
+"Request a refund" = "Request a refund";
+
+/* Button title. */
+"Restore missing purchases" = "Restore missing purchases";
+
+/* Sales-history chart axis label. */
+"Sales" = "Sales";
+
+/* A view title. */
+"Sales History" = "Sales History";
+
+/* Button title. */
+"Select" = "Select";
+
+/* Button title. */
+"Select a purchase to refund" = "Select a purchase to refund";
+
+/* Section title. */
+"Settings" = "Settings";
+
+/* Intents. Donut-charts label. */
+"Show Top Donuts" = "Show Top Donuts";
+
+/* Button title. */
+"Sign In" = "Sign In";
+
+/* Button title. */
+"Sign Out" = "Sign Out";
+
+/* Button title. */
+"Sign Up" = "Sign Up";
+
+/* Button title. */
+"Sign Up with Passkey" = "Sign Up with Passkey";
+
+/* Button title. */
+"Sign Up with Password" = "Sign Up with Password";
+
+/* Navigation title. */
+"Social Feed" = "Social Feed";
+
+/* Navigation title. */
+"Social Feed%@" = "Social Feed%@";
+
+/* A label title. */
+"Social Feed+" = "Social Feed+";
+
+/* In-app purchases content. Monthly subscription title. */
+"Social Feed+ Monthly Plan" = "Social Feed+ Monthly Plan";
+
+/* In-app purchases content. Yearly subscription title. */
+"Social Feed+ Yearly Plan" = "Social Feed+ Yearly Plan";
+
+/* Navigation title. */
+"Social-media providers" = "Social-media providers";
+
+/* A button title, sorts donuts by different categories. */
+"Sort" = "Sort";
+
+/* No comment provided by engineer. */
+"Standard" = "Standard";
+
+/* A button title. */
+"Start trial offer" = "Start trial offer";
+
+/* A label indicating the order status. */
+"Status" = "Status";
+
+/* Button title. */
+"Subscribe" = "Subscribe";
+
+/* Label title describing the possible subscription options. */
+"Subscription Options" = "Subscription Options";
+
+/* Button title. */
+"Subscription support" = "Subscription support";
+
+/* The current temperature at the parking spot. */
+"Temperature" = "Temperature";
+
+/* Subtitle to Subscribe button . */
+"The definitive social-feed experience" = "The definitive social-feed experience";
+
+/* Intents. Donut-charts label, period of time to filter by month. */
+"This Month" = "This Month";
+
+/* Intents. Donut-charts label, period of time to filter by week. */
+"This Week" = "This Week";
+
+/* Intents. Donut-charts label, period of time to filter by year. */
+"This Year" = "This Year";
+
+/* Intents. Donut-charts label. */
+"Timeframe" = "Timeframe";
+
+/* No comment provided by engineer. */
+"Title 3" = "";
+
+/* Date label used to display or filter content by date. */
+"Today" = "Today";
+
+/* The title of view where the top 5 donuts are ranked. */
+"Top 5" = "Top 5";
+
+/* Navigation title. */
+"Top 5 Donuts" = "Top 5 Donuts";
+
+/* In-app purchases content. Benefits description. */
+"Top social-media providers." = "Top social-media providers.";
+
+/* Label indicating the amount of donuts in an order. */
+"Total Donuts" = "Total Donuts";
+
+/* A label indicating the total number of sales. */
+"Total Sales" = "Total Sales";
+
+/* Label indicating that parking spot is trending. */
+"Trending" = "Trending";
+
+/* The current trending topics in the social-feed. */
+"Trending Topics" = "Trending Topics";
+
+/* A view title. */
+"Truck" = "Truck";
+
+/* A button to unlock chart details. */
+"Unlock" = "Unlock";
+
+/* A button to unlock chart details per offer. */
+"Unlock a %@" = "Unlock a %@";
+
+/* A button to unlock chart details per offer, per price. */
+"Unlock a %@ for only %@" = "Unlock a %@ for only %@";
+
+/* Username textfield placeholder. */
+"User name" = "User name";
+
+/* View order details. */
+"View Details" = "View Details";
+
+/* Date label used to display or filter content by date. */
+"Week" = "Week";
+
+/* Label explaning how the passkey sign up works. */
+"When you sign up with a passkey, all you need is a user name. The passkey will be available on all of your devices." = "When you sign up with a passkey, all you need is a user name. The passkey will be available on all of your devices.";
+
+/* Label indicating the possibility of rain. */
+"Will rain soon..." = "Will rain soon...";
+
+/* Date label used to display or filter content by date. */
+"Year" = "Year";
+
+/* Section title. */
+"Your subscription" = "Your subscription";
+
