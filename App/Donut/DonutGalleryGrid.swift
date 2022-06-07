@@ -44,7 +44,7 @@ struct DonutGalleryGrid: View {
         useReducedThumbnailSize ? 100 : 150
     }
     
-    var thumnailSize: Double {
+    var thumbnailSize: Double {
         #if os(iOS)
         return useReducedThumbnailSize ? 60 : 100
         #else
@@ -62,7 +62,7 @@ struct DonutGalleryGrid: View {
                 NavigationLink(value: donut.id) {
                     VStack {
                         DonutView(donut: donut)
-                            .frame(width: thumnailSize, height: thumnailSize)
+                            .frame(width: thumbnailSize, height: thumbnailSize)
 
                         VStack {
                             let flavor = donut.flavors.mostPotentFlavor

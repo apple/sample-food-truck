@@ -165,7 +165,7 @@ public extension Donut.Topping {
     )
     
     static let strawberryDrizzle = Donut.Topping(
-        name: String(localized: "Strawberry Drizzle", bundle: .module, comment: "Strawyberry-flavored icing drizzled over the donut."),
+        name: String(localized: "Strawberry Drizzle", bundle: .module, comment: "Strawberry-flavored icing drizzled over the donut."),
         imageAssetName: "zigzag-pink",
         flavors: FlavorProfile(salty: 1, sweet: 2, savory: 2)
     )

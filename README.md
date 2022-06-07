@@ -4,13 +4,13 @@ Create a single codebase and app target for Mac, iPad, and iPhone.
 
 ## Overview
 
-Using the Food Truck app, someone who operates a food truck can keep track of orders, discover the most-popular menu items, and check the weather at their destination. The sample implements the new [`NavigatationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview) to manage the app's views, [`Layout`](https://developer.apple.com/documentation/swiftui/layout) to show the main interface and pending orders, `Charts` to show trends, and [`WeatherService`](https://developer.apple.com/documentation/weatherkit/weatherservice) to get weather data.
+Using the Food Truck app, someone who operates a food truck can keep track of orders, discover the most-popular menu items, and check the weather at their destination. The sample implements the new [`NavigationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview) to manage the app's views, [`Layout`](https://developer.apple.com/documentation/swiftui/layout) to show the main interface and pending orders, [`Charts`](https://developer.apple.com/documentation/charts) to show trends, and [`WeatherService`](https://developer.apple.com/documentation/weatherkit/weatherservice) to get weather data.
 
 You can access the source code for this sample on [GitHub](https://github.com/apple/sample-food-truck).
 
 - Note: This sample code project is associated with WWDC22 session [110492: State of the Union](https://developer.apple.com/wwdc22/110492/).
 
-The Food Truck sample project contains two types of app targets: 
+The Food Truck sample project contains two types of app targets:
 
 - Simple app target you can build using [personal team](https://help.apple.com/xcode/mac/11.4/#/dev17411c009) signing. This app runs in Simulator, and only requires a standard Apple ID to install on a device. It includes in-app purchase, and a widget extension that enable users to add a widget to their iOS Home Screen or the macOS Notification Center.
 
@@ -21,7 +21,7 @@ The Food Truck sample project contains two types of app targets:
 To configure the Food Truck app without an Apple Developer account, follow these steps:
 
 1. In the Food Truck target's Signing & Capabilities panes click Add Account, and log in with your Apple ID.
-2. Chose the Your Name (Personal Team) from the team menu for the Food Truck and Widgets targets.
+2. Chose Your Name (Personal Team) from the team menu for the Food Truck and Widgets targets.
 3. Build and run your app.
 3. On iOS and iPadOS devices navigate to Settings > General > VPN & Device Management and trust your developer certificate.
 
@@ -42,7 +42,7 @@ Food Truck is a multiplatform app, and there are no separate targets to run on m
 
 ## Define a default navigation destination
 
-The sample's navigation interface consists of a [`NavigatationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview) with a `Sidebar` view, and a [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack):
+The sample's navigation interface consists of a [`NavigationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview) with a `Sidebar` view, and a [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack):
 
 ``` swift
 NavigationSplitView {
@@ -103,7 +103,7 @@ for index in subviews.indices {
 
 ## Display a chart of popular items
 
-The sample contains several charts. The most popular items are shown on the `TopFiveDonutsView`. This chart is implemented in `TopDonutSalesChart`, which uses a `BarMark` to construct a bar chart.
+The sample contains several charts. The most popular items are shown on the `TopFiveDonutsView`. This chart is implemented in `TopDonutSalesChart`, which uses a [`BarMark`](https://developer.apple.com/documentation/charts/barmark) to construct a bar chart.
 
 ``` swift
 Chart {
