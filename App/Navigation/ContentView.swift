@@ -28,11 +28,11 @@ struct ContentView: View {
 
     /// The view body.
     ///
-    /// This view embeds a [`NavigatationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview),
+    /// This view embeds a [`NavigationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview),
     /// which displays the ``Sidebar`` view in the
-    /// left column, and a [`NavigatationStack`](https://developer.apple.com/documentation/swiftui/navigationstack)
+    /// left column, and a [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack)
     /// in the detail column, which consists of ``DetailColumn``, on macOS and iPadOS.
-    /// On iOS the [`NavigatationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview)
+    /// On iOS the [`NavigationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview)
     /// display a navigation stack with the ``Sidebar`` view as the root.
     var body: some View {
         NavigationSplitView {

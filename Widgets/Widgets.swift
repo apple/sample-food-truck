@@ -2,7 +2,7 @@
 See LICENSE folder for this sample’s licensing information.
 
 Abstract:
-The Wideget entry point.
+The Widget entry point.
 */
 
 import WidgetKit
