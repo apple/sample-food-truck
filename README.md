@@ -103,7 +103,7 @@ for index in subviews.indices {
 
 ## Display a chart of popular items
 
-The sample contains several charts. The most popular items are shown on the `TopFiveDonutsView`. This chart is implemented in `TopDonutSalesChart`, which uses a `BarMark` to construct a bar chart.
+The sample contains several [charts](https://developer.apple.com/documentation/Charts). The most popular items are shown on the `TopFiveDonutsView`. This chart is implemented in `TopDonutSalesChart`, which uses a [`BarMark`](https://developer.apple.com/documentation/charts/barmark) to construct a bar chart.
 
 ``` swift
 Chart {
