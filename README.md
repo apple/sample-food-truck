@@ -4,13 +4,13 @@ Create a single codebase and app target for Mac, iPad, and iPhone.
 
 ## Overview
 
-Using the Food Truck app, someone who operates a food truck can keep track of orders, discover the most-popular menu items, and check the weather at their destination. The sample implements the new [`NavigatationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview) to manage the app's views, [`Layout`](https://developer.apple.com/documentation/swiftui/layout) to show the main interface and pending orders, `Charts` to show trends, and [`WeatherService`](https://developer.apple.com/documentation/weatherkit/weatherservice) to get weather data.
+Using the Food Truck app, someone who operates a food truck can keep track of orders, discover the most-popular menu items, and check the weather at their destination. The sample implements the new [`NavigationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview) to manage the app's views, [`Layout`](https://developer.apple.com/documentation/swiftui/layout) to show the main interface and pending orders, `Charts` to show trends, and [`WeatherService`](https://developer.apple.com/documentation/weatherkit/weatherservice) to get weather data.
 
 You can access the source code for this sample on [GitHub](https://github.com/apple/sample-food-truck).
 
 - Note: This sample code project is associated with WWDC22 session [110492: State of the Union](https://developer.apple.com/wwdc22/110492/).
 
-The Food Truck sample project contains two types of app targets: 
+The Food Truck sample project contains two types of app targets:
 
 - Simple app target you can build using [personal team](https://help.apple.com/xcode/mac/11.4/#/dev17411c009) signing. This app runs in Simulator, and only requires a standard Apple ID to install on a device. It includes in-app purchase, and a widget extension that enable users to add a widget to their iOS Home Screen or the macOS Notification Center.
 
@@ -20,10 +20,10 @@ The Food Truck sample project contains two types of app targets:
 
 To configure the Food Truck app without an Apple Developer account, follow these steps:
 
-1. In the Food Truck target's Signing & Capabilities panes click Add Account, and log in with your Apple ID.
-2. Chose the Your Name (Personal Team) from the team menu for the Food Truck and Widgets targets.
+1. In the Food Truck target's Signing & Capabilities panes, click Add Account, and log in with your Apple ID.
+2. Chose Your Name (Personal Team) from the team menu for the Food Truck and Widgets targets.
 3. Build and run your app.
-3. On iOS and iPadOS devices navigate to Settings > General > VPN & Device Management and trust your developer certificate.
+4. On iOS and iPadOS devices, navigate to Settings > General > VPN & Device Management and trust your developer certificate.
 
 To configure the Food Truck All app to run on your devices, follow these steps:
 
@@ -34,7 +34,7 @@ To configure the Food Truck All app to run on your devices, follow these steps:
 5. Ensure an `apple-app-site-association` (AASA) file is present on your domain, in the `.well-known` directory, and it contains an entry for this app’s App ID for the `webcredentials` service. For more information about the `apple-app-site-association` file, see [Supporting Associated Domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains).
 6. In the `AccountManager.swift` file, replace all occurrences of `example.com` with the name of your domain.
 
-- Note: To use the weather forecast feature in the sample, you need to perform additional steps to configure WeatherKit, as described in the Configure the project for WeatherKit section below, or the sample will detect an error and use static data included in the project.
+- Note: To use the weather forecast feature in the sample, you need to perform additional steps to configure WeatherKit, as described in the [*Configure the project for WeatherKit*](#configure-the-project-for-weatherkit) section below, or the sample will detect an error and use static data included in the project.
 
 ## Create a multiplatform app
 
@@ -42,7 +42,7 @@ Food Truck is a multiplatform app, and there are no separate targets to run on m
 
 ## Define a default navigation destination
 
-The sample's navigation interface consists of a [`NavigatationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview) with a `Sidebar` view, and a [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack):
+The sample's navigation interface consists of a [`NavigationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview) with a `Sidebar` view, and a [`NavigationStack`](https://developer.apple.com/documentation/swiftui/navigationstack):
 
 ``` swift
 NavigationSplitView {
@@ -189,5 +189,5 @@ The data from the [`WeatherService`](https://developer.apple.com/documentation/w
 1. Create a unique App ID on the [Provisioning Portal](https://developer.apple.com/account/resources/certificates/list), and select the WeatherKit service on the App Services tab.
 2. In Xcode, for the Food Truck All target on the Signing & Capabilities tab, change the bundle ID to be the same as the App ID from step 1, and add the WeatherKit capability.
 3. For the Widgets target on the Signing & Capabilities tab, change the bundle ID to make the part before `.Widgets` the same as the bundle ID for the Food Truck All target.
-3. Wait 30 minutes while the service registers your app's bundle ID.
-4. Build and run the Food Truck All target.
+4. Wait 30 minutes while the service registers your app's bundle ID.
+5. Build and run the Food Truck All target.
