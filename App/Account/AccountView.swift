@@ -21,7 +21,12 @@ struct AccountView: View {
             if case let .authenticated(username) = accountStore.currentUser {
                 Section {
                     HStack {
-                        AccountMonogramView(username: username)
+                        Image(systemName: "person.fill")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .frame(width: 60, height: 60)
+                            .background(Color.accentColor.gradient, in: Circle())
 
                         Text(username)
                             .font(.system(.title3, design: .rounded))

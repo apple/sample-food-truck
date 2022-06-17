@@ -24,7 +24,6 @@
 		E0510740283C187300FCE3E6 /* StoreSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C22282333C9007B925B /* StoreSupportView.swift */; };
 		E0510741283C187300FCE3E6 /* DonutEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37BF328233374007B925B /* DonutEditor.swift */; };
 		E0510742283C187300FCE3E6 /* SalesHistoryChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E039E3532834AC4800508176 /* SalesHistoryChart.swift */; };
-		E0510744283C187300FCE3E6 /* AccountMonogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37BE128233197007B925B /* AccountMonogramView.swift */; };
 		E0510746283C187300FCE3E6 /* RefundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C24282333C9007B925B /* RefundView.swift */; platformFilter = ios; };
 		E0510747283C187300FCE3E6 /* UnlockFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C21282333C9007B925B /* UnlockFeatureView.swift */; };
 		E0510748283C187300FCE3E6 /* CardNavigationHeaderLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DC3642833222500040525 /* CardNavigationHeaderLabelStyle.swift */; };
@@ -64,7 +63,6 @@
 		E0C37BC92823189D007B925B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C37BC82823189D007B925B /* Assets.xcassets */; };
 		E0C37BDF28232B8B007B925B /* FoodTruckKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0C37BDE28232B8B007B925B /* FoodTruckKit */; };
 		E0C37BE328233197007B925B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37BE028233197007B925B /* SignUpView.swift */; };
-		E0C37BE428233197007B925B /* AccountMonogramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37BE128233197007B925B /* AccountMonogramView.swift */; };
 		E0C37BEB282331AA007B925B /* DetailedMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37BE6282331AA007B925B /* DetailedMapView.swift */; };
 		E0C37BEC282331AA007B925B /* CityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37BE7282331AA007B925B /* CityView.swift */; };
 		E0C37BED282331AA007B925B /* CityWeatherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37BE8282331AA007B925B /* CityWeatherCard.swift */; };
@@ -181,7 +179,6 @@
 		E0C37BCA2823189D007B925B /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		E0C37BDC282326EF007B925B /* FoodTruckKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FoodTruckKit; sourceTree = "<group>"; };
 		E0C37BE028233197007B925B /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
-		E0C37BE128233197007B925B /* AccountMonogramView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMonogramView.swift; sourceTree = "<group>"; };
 		E0C37BE228233197007B925B /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		E0C37BE6282331AA007B925B /* DetailedMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedMapView.swift; sourceTree = "<group>"; };
 		E0C37BE7282331AA007B925B /* CityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityView.swift; sourceTree = "<group>"; };
@@ -348,7 +345,6 @@
 		E0C37BD3282318D1007B925B /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				E0C37BE128233197007B925B /* AccountMonogramView.swift */,
 				E0C37BE228233197007B925B /* AccountView.swift */,
 				E0C37BE028233197007B925B /* SignUpView.swift */,
 			);
@@ -609,7 +605,6 @@
 				E0510741283C187300FCE3E6 /* DonutEditor.swift in Sources */,
 				E0510742283C187300FCE3E6 /* SalesHistoryChart.swift in Sources */,
 				E0C4A528283E8FD5007D5B83 /* ShowTopDonutsIntent.swift in Sources */,
-				E0510744283C187300FCE3E6 /* AccountMonogramView.swift in Sources */,
 				E0510746283C187300FCE3E6 /* RefundView.swift in Sources */,
 				E0510747283C187300FCE3E6 /* UnlockFeatureView.swift in Sources */,
 				E0510748283C187300FCE3E6 /* CardNavigationHeaderLabelStyle.swift in Sources */,
@@ -660,7 +655,6 @@
 				E0C37C28282333C9007B925B /* StoreSupportView.swift in Sources */,
 				E0C37BFC28233374007B925B /* DonutEditor.swift in Sources */,
 				E039E3552834AC4800508176 /* SalesHistoryChart.swift in Sources */,
-				E0C37BE428233197007B925B /* AccountMonogramView.swift in Sources */,
 				E0C37C2A282333C9007B925B /* RefundView.swift in Sources */,
 				E0C37C27282333C9007B925B /* UnlockFeatureView.swift in Sources */,
 				E09DC3692833222700040525 /* CardNavigationHeaderLabelStyle.swift in Sources */,

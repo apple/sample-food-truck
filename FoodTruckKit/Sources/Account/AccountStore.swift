@@ -61,7 +61,7 @@ public final class AccountStore: NSObject, ObservableObject, ASAuthorizationCont
 
     // MARK: - Private
 
-    private static let relyingPartyIdentifier = "zkiraly.github.io"
+    private static let relyingPartyIdentifier = "example.com"
     private var currentController: ASAuthorizationController?
     private var currentContinuation: CheckedContinuation<ASAuthorizationCredential, Error>?
 

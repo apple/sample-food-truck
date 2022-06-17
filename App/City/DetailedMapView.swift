@@ -44,11 +44,10 @@ struct DetailedMapView: ViewControllerRepresentable {
             view.autoresizingMask = [.width, .height]
             #endif
             
-            let configuration = MKStandardMapConfiguration(mapMode: .default, landscape: .detailed)
+            let configuration = MKStandardMapConfiguration(elevationStyle: .realistic, emphasisStyle: .default)
             configuration.pointOfInterestFilter = .excludingAll
             configuration.showsTraffic = false
-            configuration.showsBuildings = true
-            mapView.configuration = configuration
+            mapView.preferredConfiguration = configuration
             mapView.isZoomEnabled = false
             mapView.isPitchEnabled = false
             mapView.isScrollEnabled = false

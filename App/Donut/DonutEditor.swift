@@ -46,13 +46,16 @@ struct DonutEditor: View {
             }
             #endif
         }
-        .navigationTitle(donut.name) {
-            Button {
+        .toolbar {
+            ToolbarTitleActions {
+                Button {
 
-            } label: {
-                Label("My Action", systemImage: "star")
+                } label: {
+                    Label("My Action", systemImage: "star")
+                }
             }
         }
+        .navigationTitle(donut.name)
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarRole(.editor)

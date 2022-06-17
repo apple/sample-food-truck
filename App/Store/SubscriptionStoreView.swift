@@ -222,10 +222,7 @@ struct SubscriptionOptionView: View {
     @Environment(\.colorScheme) private var colorScheme
     
     private var savingsText: String? {
-        if let savings = savings {
-            return "\(savings.formattedPrice(with: subscription.priceLocale)) (Save \(savings.formattedPercent))"
-        }
-        return nil
+        savings.map { "\($0.formattedPrice(for: subscription)) (Save \($0.formattedPercent))" }
     }
     
     private static var backgroundColor: Color {

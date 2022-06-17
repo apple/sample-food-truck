@@ -52,7 +52,9 @@ public struct SubscriptionSavings {
         return percentSavings.formatted(.percent.precision(.significantDigits(3)))
     }
     
-    public func formattedPrice(with locale: Locale) -> String {
-        return "\(granularPrice.formatted(.currency(code: locale.currencyCode!)))/\(granularPricePeriod.localizedDescription.lowercased())"
+    public func formattedPrice(for subscription: Subscription) -> String {
+        let currency = granularPrice.formatted(subscription.priceFormatStyle)
+        let period = granularPricePeriod.formatted(subscription.subscriptionPeriodUnitFormatStyle)
+        return "\(currency)/\(period)"
     }
 }

@@ -112,17 +112,9 @@ struct SocialFeedPlusMarketingView: View {
             .frame(maxWidth: .infinity)
         }
         #if os(iOS)
-        .listRowBackground(
-            Image("store/Social Feed Background")
-                .resizable()
-                .scaledToFill()
-        )
+        .listRowBackground(Rectangle().fill(.indigo.gradient))
         #elseif os(macOS)
-        .background {
-            Image("store/Social Feed Background")
-                .resizable()
-                .scaledToFill()
-        }
+        .background(.indigo.gradient)
         .cornerRadius(10)
         #endif
     }
