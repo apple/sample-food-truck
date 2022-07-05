@@ -90,7 +90,6 @@ struct OrdersWidgetView: View {
                     } currentValueLabel: {
                         DonutView(donut: Donut.classic)
                     }
-//                    .gaugeStyle(.circularDashboard)
                     .tint(Color.white)
                     
                 }
@@ -124,12 +123,11 @@ struct OrdersWidgetView: View {
                                 
                 SegmentedGauge(value: entry.orders, total: entry.quota) {
                     Text("\(entry.orders.formatted()) out of \(entry.quota.formatted())")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.bottom, -4)
                 }
                 .tint(Color.widgetAccent)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            
         case .accessoryInline:
             Label {
                 Text("\(entry.orders) of \(entry.quota) Orders")

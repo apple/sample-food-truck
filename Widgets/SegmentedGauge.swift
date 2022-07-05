@@ -38,7 +38,7 @@ struct SegmentedGaugeStyle: GaugeStyle {
     func makeBody(configuration: Configuration) -> some View {
         let value = Int(configuration.value * Double(total))
 
-        VStack {
+        VStack(alignment: .leading, spacing: 4) {
             configuration.label
 
             HStack(spacing: metrics.gap) {

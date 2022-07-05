@@ -47,7 +47,7 @@ struct DonutEditor: View {
             #endif
         }
         .toolbar {
-            ToolbarTitleActions {
+            ToolbarTitleMenu {
                 Button {
 
                 } label: {

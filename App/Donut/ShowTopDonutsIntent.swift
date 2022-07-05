@@ -10,22 +10,21 @@ import AppIntents
 import SwiftUI
 
 struct ShowTopDonutsIntent: AppIntent {
+    
     static var title: LocalizedStringResource = "Show Top Donuts"
     
     @Parameter(title: "Timeframe")
     var timeframe: Timeframe
     
     @MainActor
-    func perform() async throws -> some IntentPerformResult {
-        return .finished {
-            ShowTopDonutsIntentView(timeframe: timeframe)
-        }
+    func perform() async throws -> some IntentResult & ShowsSnippetView {
+        .result(view: ShowTopDonutsIntentView(timeframe: timeframe))
     }
 }
 
 extension Timeframe: AppEnum {
-    public static var typeDisplayName: LocalizedStringResource = "Timeframe"
-    
+    public static var typeDisplayRepresentation: TypeDisplayRepresentation = "Timeframe"
+        
     public static var caseDisplayRepresentations: [Timeframe: DisplayRepresentation] = [
         .today: "Today",
         .week: "This Week",
