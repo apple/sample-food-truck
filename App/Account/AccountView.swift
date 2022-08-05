@@ -59,9 +59,6 @@ struct AccountView: View {
                     Button("Sign In") {
                         signIn()
                     }
-                    .accountStorePresentationContext { provider in
-                        accountStore.presentationContextProvider = provider
-                    }
                     Button("Sign Up") {
                         isSignUpSheetPresented = true
                     }
@@ -77,9 +74,6 @@ struct AccountView: View {
         .sheet(isPresented: $isSignUpSheetPresented) {
             NavigationStack {
                 SignUpView(model: model)
-                    .accountStorePresentationContext { provider in
-                        accountStore.presentationContextProvider = provider
-                    }
             }
         }
         .alert(isPresented: $isSignOutAlertPresented) {

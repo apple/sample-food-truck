@@ -67,7 +67,9 @@ struct SignUpView: View {
             }
         }
         .navigationTitle("Sign Up")
-        .defaultFocus($focusedElement, .username)
+        .onAppear {
+            focusedElement = .username
+        }
         .toolbar {
             Button("Cancel", role: .cancel) {
                 dismiss()

@@ -28,6 +28,9 @@ struct FoodTruckApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(model: model, accountStore: accountStore)
+                .accountStorePresentationContext { provider in
+                    accountStore.presentationContextProvider = provider
+                }
         }
         #if os(macOS)
         .defaultSize(width: 1000, height: 650)
