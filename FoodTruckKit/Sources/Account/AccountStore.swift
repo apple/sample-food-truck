@@ -152,7 +152,7 @@ struct PresentationContextProviderModifier: ViewModifier {
     public func body(content: Content) -> some View {
         content.background {
             PresentationContextProviderView(onProviderCreated: onProviderCreated)
-                .hidden()
+                .opacity(0)
         }
     }
 }

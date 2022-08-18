@@ -17,7 +17,7 @@ struct AccountView: View {
     @State private var isSignOutAlertPresented = false
 
     var body: some View {
-        List {
+        Form {
             if case let .authenticated(username) = accountStore.currentUser {
                 Section {
                     HStack {
@@ -40,31 +40,44 @@ struct AccountView: View {
             }
             #else
             Section {
-                Button("Restore missing purchases") {
-                    Task(priority: .userInitiated) {
-                        try await AppStore.sync()
+                LabeledContent("Purchases") {
+                    Button("Restore missing purchases") {
+                        Task(priority: .userInitiated) {
+                            try await AppStore.sync()
+                        }
                     }
                 }
-                .frame(maxWidth: .infinity)
             }
             #endif
 
             Section {
                 if accountStore.isSignedIn {
-                    Button("Sign Out", role: .destructive) {
-                        isSignOutAlertPresented = true
+                    LabeledContent("Sign out") {
+                        Button("Sign Out", role: .destructive) {
+                            isSignOutAlertPresented = true
+                        }
+                        .frame(maxWidth: .infinity)
                     }
-                    .frame(maxWidth: .infinity)
+                    .labelsHidden()
                 } else {
-                    Button("Sign In") {
-                        signIn()
+                    LabeledContent("Use existing account") {
+                        Button("Sign In") {
+                            signIn()
+                        }
+                        .accountStorePresentationContext { provider in
+                            accountStore.presentationContextProvider = provider
+                        }
                     }
-                    Button("Sign Up") {
-                        isSignUpSheetPresented = true
+                    LabeledContent("Create new account") {
+                        Button("Sign Up") {
+                            isSignUpSheetPresented = true
+                        }
                     }
                 }
             }
         }
+        .frame(maxWidth: 500, maxHeight: .infinity)
+        .formStyle(.grouped)
         .navigationTitle("Account")
         #if os(iOS)
         .navigationDestination(for: String.self) { _ in
@@ -74,7 +87,13 @@ struct AccountView: View {
         .sheet(isPresented: $isSignUpSheetPresented) {
             NavigationStack {
                 SignUpView(model: model)
+                    .accountStorePresentationContext { provider in
+                        accountStore.presentationContextProvider = provider
+                    }
             }
+        }
+        .accountStorePresentationContext { provider in
+            accountStore.presentationContextProvider = provider
         }
         .alert(isPresented: $isSignOutAlertPresented) {
             signOutAlert

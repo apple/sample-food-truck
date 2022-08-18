@@ -24,65 +24,77 @@ struct SignUpView: View {
     @EnvironmentObject private var accountStore: AccountStore
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focusedElement: FocusElement?
-    @State private var signUpType = SignUpType.passkey
+    @State private var usePasskey: Bool = true
     @State private var username = ""
     @State private var password = ""
 
     var body: some View {
         Form {
             Section {
-                TextField("User name", text: $username)
-                    .textContentType(.username)
-                    #if os(iOS)
-                    .textInputAutocapitalization(.never)
-                    .keyboardType(.emailAddress)
-                    #endif
-                    .focused($focusedElement, equals: .username)
-
-                if case .password = signUpType {
-                    SecureField("Password", text: $password)
-                        .textContentType(.password)
-                        .focused($focusedElement, equals: .password)
+                LabeledContent("User name") {
+                    TextField("User name", text: $username)
+                        .textContentType(.username)
+                        .multilineTextAlignment(.trailing)
+#if os(iOS)
+                    
+                        .textInputAutocapitalization(.never)
+                        .keyboardType(.emailAddress)
+#endif
+                        .focused($focusedElement, equals: .username)
+                        .labelsHidden()
                 }
-            } footer: {
-                if case .passkey = signUpType {
-                    HStack(spacing: 10) {
-                        Image(systemName: "person.badge.key.fill")
-                            .font(.title2)
-
-                        Text("When you sign up with a passkey, all you need is a user name. The passkey will be available on all of your devices.")
+                
+                if !usePasskey {
+                    LabeledContent("Password") {
+                        SecureField("Password", text: $password)
+                            .textContentType(.password)
+                            .multilineTextAlignment(.trailing)
+                            .focused($focusedElement, equals: .password)
+                            .labelsHidden()
                     }
                 }
+                
+                LabeledContent("Use Passkey") {
+                    Toggle("Use Passkey", isOn: $usePasskey)
+                        .labelsHidden()
+                }
+            } header: {
+                Text("Create an account")
+            } footer: {
+                Label("""
+                    When you sign up with a passkey, all you need is a user name. \
+                    The passkey will be available on all of your devices.
+                    """, systemImage: "person.badge.key.fill")
             }
-
-            Section {
+        }
+        .formStyle(.grouped)
+        .animation(.default, value: usePasskey)
+        .frame(maxWidth: 500)
+        .navigationTitle("Sign up")
+        .toolbar {
+            ToolbarItem(placement: .confirmationAction) {
                 Button("Sign Up") {
                     signUp()
                 }
-                .frame(maxWidth: .infinity)
-                .font(.headline)
                 .disabled(!isFormValid)
-            } footer: {
-                changeSignUpTypeButton
+            }
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancel", role: .cancel) {
+                    print("Canceled sign up.")
+                    dismiss()
+                }
             }
         }
-        .navigationTitle("Sign Up")
         .onAppear {
             focusedElement = .username
-        }
-        .toolbar {
-            Button("Cancel", role: .cancel) {
-                dismiss()
-            }
         }
     }
 
     private func signUp() {
         Task { @MainActor in
-            switch signUpType {
-            case .passkey:
+            if usePasskey {
                 try await accountStore.createPasskeyAccount(username: username)
-            case .password:
+            } else {
                 try await accountStore.createPasswordAccount(username: username, password: password)
             }
             dismiss()
@@ -90,33 +102,32 @@ struct SignUpView: View {
     }
 
     private var isFormValid: Bool {
-        switch signUpType {
-        case .passkey:
+        if usePasskey {
             return !username.isEmpty
-        case .password:
+        } else {
             return !username.isEmpty && !password.isEmpty
         }
     }
 
-    @ViewBuilder
-    private var changeSignUpTypeButton: some View {
-        Group {
-            switch signUpType {
-            case .passkey:
-                Button("Sign Up with Password") {
-                    signUpType = .password
-                }
-            case .password:
-                Button("Sign Up with Passkey") {
-                    signUpType = .passkey
-                    password = ""
-                }
-            }
-        }
-        .padding(8)
-        .frame(maxWidth: .infinity)
-        .font(.system(.subheadline))
-    }
+//    @ViewBuilder
+//    private var changeSignUpTypeButton: some View {
+//        Group {
+//            switch signUpType {
+//            case .passkey:
+//                Button("Sign Up with Password") {
+//                    signUpType = .password
+//                }
+//            case .password:
+//                Button("Sign Up with Passkey") {
+//                    signUpType = .passkey
+//                    password = ""
+//                }
+//            }
+//        }
+//        .padding(8)
+//        .frame(maxWidth: .infinity)
+//        .font(.system(.subheadline))
+//    }
 }
 
 struct SignUpView_Previews: PreviewProvider {
