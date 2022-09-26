@@ -11,6 +11,11 @@ import SwiftUI
 @main
 struct Widgets: WidgetBundle {
     var body: some Widget {
+        // MARK: - Live Activity Widgets
+        #if canImport(ActivityKit)
+        TruckActivityWidget()
+        #endif
+        
         // MARK: - Accessory Widgets
         #if os(iOS) || os(watchOS)
         OrdersWidget()

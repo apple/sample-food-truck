@@ -4,7 +4,7 @@ Create a single codebase and app target for Mac, iPad, and iPhone.
 
 ## Overview
 
-Using the Food Truck app, someone who operates a food truck can keep track of orders, discover the most-popular menu items, and check the weather at their destination. The sample implements the new [`NavigationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview) to manage the app's views, [`Layout`](https://developer.apple.com/documentation/swiftui/layout) to show the main interface and pending orders, [`Charts`](https://developer.apple.com/documentation/charts) to show trends, and [`WeatherService`](https://developer.apple.com/documentation/weatherkit/weatherservice) to get weather data.
+Using the Food Truck app, someone who operates a food truck can keep track of orders, discover the most-popular menu items, and check the weather at their destination. The sample implements the new [`NavigationSplitView`](https://developer.apple.com/documentation/swiftui/navigationsplitview) to manage the app's views, [`Layout`](https://developer.apple.com/documentation/swiftui/layout) to show the main interface and pending orders, [`Charts`](https://developer.apple.com/documentation/charts) to show trends, and [`WeatherService`](https://developer.apple.com/documentation/weatherkit/weatherservice) to get weather data. Food Truck also implements Live Activities to show the remaining order preparation time with [ActivityKit](https://developer.apple.com/documentation/activitykit) on the lock screen, and with [`DynamicIsland`](https://developer.apple.com/documentation/widgetkit/dynamicisland) on the home screen.
 
 You can access the source code for this sample on [GitHub](https://github.com/apple/sample-food-truck).
 
@@ -191,3 +191,73 @@ The data from the [`WeatherService`](https://developer.apple.com/documentation/w
 3. For the Widgets target on the Signing & Capabilities tab, change the bundle ID to make the part before `.Widgets` the same as the bundle ID for the Food Truck All target.
 3. Wait 30 minutes while the service registers your app's bundle ID.
 4. Build and run the Food Truck All target.
+
+## Track preparation time with Live Activity
+The app allows the food truck operator to keep track of order preparation time, which is guaranteed to be 60 seconds or less. To facilitate this, the app implements a toolbar button on the order details screen for orders with `placed` status. Tapping this button changes the order status to `preparing`, and creates an [`Activity`](https://developer.apple.com/documentation/activitykit/activity) instance to start a Live Activity, which shows the countdown timer and order details on an iPhone lock screen.
+
+``` swift
+let timerSeconds = 60
+let activityAttributes = TruckActivityAttributes(
+    orderID: String(order.id.dropFirst(6)),
+    order: order.donuts.map(\.id),
+    sales: order.sales,
+    activityName: "Order preparation activity."
+)
+
+let initialContentState = TruckActivityAttributes.ContentState(timerRange: Date.now...Date(timeIntervalSinceNow: Double(timerSeconds)))
+
+do {
+    let myActivity = try Activity<TruckActivityAttributes>.request(attributes: activityAttributes, contentState: initialContentState,
+        pushType: nil)
+    print(" Requested MyActivity live activity. ID: \(myActivity.id)")
+    postNotification()
+} catch let error {
+    print("Error requesting live activity: \(error.localizedDescription)")
+}
+```
+
+The app also implements [`DynamicIsland`](https://developer.apple.com/documentation/widgetkit/dynamicisland) to show the same information as on the lock screen in the Dynamic Island on iPhone 14 Pro devices.
+
+``` swift
+DynamicIsland {
+    DynamicIslandExpandedRegion(.leading) {
+        ExpandedLeadingView()
+    }
+
+    DynamicIslandExpandedRegion(.trailing, priority: 1) {
+        ExpandedTrailingView(orderNumber: context.attributes.orderID, timerInterval: context.state.timerRange)
+            .dynamicIsland(verticalPlacement: .belowIfTooWide)
+    }
+} compactLeading: {
+    Image("IslandCompactIcon")
+        .padding(4)
+        .background(.indigo.gradient, in: ContainerRelativeShape())
+       
+} compactTrailing: {
+    Text(timerInterval: context.state.timerRange, countsDown: true)
+        .monospacedDigit()
+        .foregroundColor(Color("LightIndigo"))
+        .frame(width: 40)
+} minimal: {
+    Image("IslandCompactIcon")
+        .padding(4)
+        .background(.indigo.gradient, in: ContainerRelativeShape())
+}
+.contentMargins(.trailing, 32, for: .expanded)
+.contentMargins([.leading, .top, .bottom], 6, for: .compactLeading)
+.contentMargins(.all, 6, for: .minimal)
+.widgetURL(URL(string: "foodtruck://order/\(context.attributes.orderID)"))
+```
+
+Tapping the same button again changes the status to `complete`, and ends the Live Activity. This removes the Live Activity from the lock screen and from the Dynamic Island.
+
+``` swift
+Task {
+    for activity in Activity<TruckActivityAttributes>.activities {
+        // Check if this is the activity associated with this order.
+        if activity.attributes.orderID == String(order.id.dropFirst(6)) {
+            await activity.end(dismissalPolicy: .immediate)
+        }
+    }
+}
+```

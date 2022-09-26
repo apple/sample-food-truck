@@ -14,7 +14,7 @@ public class FoodTruckModel: ObservableObject {
     @Published public var orders: [Order] = []
     @Published public var donuts = Donut.all
     @Published public var newDonut: Donut
-    
+        
     var dailyOrderSummaries: [City.ID: [OrderSummary]] = [:]
     var monthlyOrderSummaries: [City.ID: [OrderSummary]] = [:]
 

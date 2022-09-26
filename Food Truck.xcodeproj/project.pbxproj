@@ -50,6 +50,11 @@
 		E0510763283C187300FCE3E6 /* FoodTruckKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0510733283C187300FCE3E6 /* FoodTruckKit */; };
 		E0510765283C187300FCE3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C37BC82823189D007B925B /* Assets.xcassets */; };
 		E0510767283C187300FCE3E6 /* Widgets.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E0C37C3228234145007B925B /* Widgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E08260F828CA97B000071BA9 /* TruckActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08260F728CA97B000071BA9 /* TruckActivityWidget.swift */; };
+		E08260FA28CAA2FD00071BA9 /* TruckActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08260F928CAA2FD00071BA9 /* TruckActivityAttributes.swift */; };
+		E08260FB28CAA30D00071BA9 /* TruckActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08260F928CAA2FD00071BA9 /* TruckActivityAttributes.swift */; };
+		E08260FC28CAA30D00071BA9 /* TruckActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08260F928CAA2FD00071BA9 /* TruckActivityAttributes.swift */; };
+		E08260FD28CAA3AD00071BA9 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C4A534283EBD67007D5B83 /* FlowLayout.swift */; };
 		E08D7060283C492C00014B89 /* SocialFeedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08D705F283C492C00014B89 /* SocialFeedContent.swift */; };
 		E08D7061283C492C00014B89 /* SocialFeedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08D705F283C492C00014B89 /* SocialFeedContent.swift */; };
 		E09DC35E2833175500040525 /* OrderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DC35D2833175500040525 /* OrderRow.swift */; };
@@ -164,6 +169,10 @@
 		E039E3522834AC4800508176 /* SalesHistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesHistoryView.swift; sourceTree = "<group>"; };
 		E039E3532834AC4800508176 /* SalesHistoryChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SalesHistoryChart.swift; sourceTree = "<group>"; };
 		E051076C283C187300FCE3E6 /* Food Truck All.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Truck All.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E08260F728CA97B000071BA9 /* TruckActivityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckActivityWidget.swift; sourceTree = "<group>"; };
+		E08260F928CAA2FD00071BA9 /* TruckActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruckActivityAttributes.swift; sourceTree = "<group>"; };
+		E08260FE28CAA86100071BA9 /* Food-Truck-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Food-Truck-Info.plist"; sourceTree = "<group>"; };
+		E08260FF28CAA86700071BA9 /* Food-Truck-All-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Food-Truck-All-Info.plist"; sourceTree = "<group>"; };
 		E08D705C283C30CA00014B89 /* Entitlements-All.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Entitlements-All.entitlements"; sourceTree = "<group>"; };
 		E08D705F283C492C00014B89 /* SocialFeedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedContent.swift; sourceTree = "<group>"; };
 		E09DC35D2833175500040525 /* OrderRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderRow.swift; sourceTree = "<group>"; };
@@ -329,6 +338,8 @@
 				E0C37BC82823189D007B925B /* Assets.xcassets */,
 				E0C37BCA2823189D007B925B /* Entitlements.entitlements */,
 				E08D705C283C30CA00014B89 /* Entitlements-All.entitlements */,
+				E08260FF28CAA86700071BA9 /* Food-Truck-All-Info.plist */,
+				E08260FE28CAA86100071BA9 /* Food-Truck-Info.plist */,
 				84ACCDC1282D671600756FB7 /* Localizable.strings */,
 				E0C37BD3282318D1007B925B /* Account */,
 				E0C37BD4282318E3007B925B /* City */,
@@ -438,6 +449,7 @@
 			children = (
 				E0C37C4C282350E6007B925B /* Widgets.entitlements */,
 				E0C37C3828234145007B925B /* Widgets.swift */,
+				E08260F928CAA2FD00071BA9 /* TruckActivityAttributes.swift */,
 				E0C37C4228234161007B925B /* ParkingSpotAccessory.swift */,
 				E0C37C4428234166007B925B /* OrdersWidget.swift */,
 				E0C37C4628235048007B925B /* SegmentedGauge.swift */,
@@ -446,6 +458,7 @@
 				E0C37C3B28234148007B925B /* Assets.xcassets */,
 				E0C37C3D28234148007B925B /* Info.plist */,
 				84ACCDC4282D671600756FB7 /* Localizable.strings */,
+				E08260F728CA97B000071BA9 /* TruckActivityWidget.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -525,7 +538,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1410;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					E0C37BC02823189A007B925B = {
@@ -621,6 +634,7 @@
 				E08D7061283C492C00014B89 /* SocialFeedContent.swift in Sources */,
 				E0510752283C187300FCE3E6 /* TruckWeatherCard.swift in Sources */,
 				E0510753283C187300FCE3E6 /* DetailedMapView.swift in Sources */,
+				E08260FB28CAA30D00071BA9 /* TruckActivityAttributes.swift in Sources */,
 				E0510754283C187300FCE3E6 /* ParkingSpotShowcaseView.swift in Sources */,
 				E0510756283C187300FCE3E6 /* CityView.swift in Sources */,
 				E0510757283C187300FCE3E6 /* Sidebar.swift in Sources */,
@@ -655,6 +669,7 @@
 				E0C37C28282333C9007B925B /* StoreSupportView.swift in Sources */,
 				E0C37BFC28233374007B925B /* DonutEditor.swift in Sources */,
 				E039E3552834AC4800508176 /* SalesHistoryChart.swift in Sources */,
+				E08260FC28CAA30D00071BA9 /* TruckActivityAttributes.swift in Sources */,
 				E0C37C2A282333C9007B925B /* RefundView.swift in Sources */,
 				E0C37C27282333C9007B925B /* UnlockFeatureView.swift in Sources */,
 				E09DC3692833222700040525 /* CardNavigationHeaderLabelStyle.swift in Sources */,
@@ -691,10 +706,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08260F828CA97B000071BA9 /* TruckActivityWidget.swift in Sources */,
 				E0C37C3928234145007B925B /* Widgets.swift in Sources */,
 				E0C37C4728235048007B925B /* SegmentedGauge.swift in Sources */,
 				E0C37C5028235184007B925B /* ParkingSpotAccessory.swift in Sources */,
+				E08260FD28CAA3AD00071BA9 /* FlowLayout.swift in Sources */,
 				E0C37C4F2823517F007B925B /* OrdersWidget.swift in Sources */,
+				E08260FA28CAA2FD00071BA9 /* TruckActivityAttributes.swift in Sources */,
 				E0C37C492823505C007B925B /* WidgetColors.swift in Sources */,
 				E0C37C4B28235061007B925B /* DailyDonutWidget.swift in Sources */,
 			);
@@ -744,13 +762,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "App/Entitlements-All.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App/Food-Truck-All-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Food Truck";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -759,13 +779,14 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphone*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Food-Truck${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG EXTENDED_ALL";
@@ -783,13 +804,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "App/Entitlements-All.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App/Food-Truck-All-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Food Truck";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -798,13 +821,14 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphone*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Food-Truck${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = EXTENDED_ALL;
@@ -819,6 +843,7 @@
 			baseConfigurationReference = F8C1D33EEFB6F5E9930C5AA2 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -848,6 +873,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -879,6 +905,7 @@
 			baseConfigurationReference = F8C1D33EEFB6F5E9930C5AA2 /* SampleCode.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -908,6 +935,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -936,13 +964,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App/Food-Truck-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Food Truck";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -951,7 +981,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphone*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -976,13 +1006,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "App/Food-Truck-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Food Truck";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -991,7 +1023,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphone*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -1015,7 +1047,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = Widgets/Widgets.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -1023,7 +1055,7 @@
 				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1052,7 +1084,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = Widgets/Widgets.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
@@ -1060,7 +1092,7 @@
 				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -36,6 +36,14 @@ struct OrdersView: View {
         .sorted(using: sortOrder)
     }
     
+    var orderSections: [OrderStatus: [Order]] {
+        var result: [OrderStatus: [Order]] = [:]
+        orders.forEach { order in
+            result[order.status, default: []].append(order)
+        }
+        return result
+    }
+    
     var body: some View {
         ZStack {
             if displayAsList {
@@ -61,7 +69,36 @@ struct OrdersView: View {
     }
     
     var list: some View {
-        List(orders) { order in
+        List {
+            if let orders = orderSections[.placed] {
+                Section("New") {
+                    orderRows(orders)
+                }
+            }
+            
+            if let orders = orderSections[.preparing] {
+                Section("Preparing") {
+                    orderRows(orders)
+                }
+            }
+            
+            if let orders = orderSections[.ready] {
+                Section("Ready") {
+                    orderRows(orders)
+                }
+            }
+            
+            if let orders = orderSections[.completed] {
+                Section("Completed") {
+                    orderRows(orders)
+                }
+            }
+        }
+        .headerProminence(.increased)
+    }
+    
+    func orderRows(_ orders: [Order]) -> some View {
+        ForEach(orders) { order in
             NavigationLink(value: order.id) {
                 OrderRow(order: order)
                     .badge(order.totalSales)

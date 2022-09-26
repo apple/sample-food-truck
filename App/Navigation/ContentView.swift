@@ -7,6 +7,7 @@ The app's root view.
 
 import SwiftUI
 import FoodTruckKit
+import os
 
 /// The root view in Food Truck.
 ///
@@ -58,6 +59,18 @@ struct ContentView: View {
         }
         .onPreferenceChange(StoreMessagesDeferredPreferenceKey.self) { newValue in
             StoreMessagesManager.shared.sensitiveViewIsPresented = newValue
+        }
+        .onOpenURL { url in
+            let urlLogger = Logger(subsystem: "com.example.apple-samplecode.Food-Truck", category: "url")
+            urlLogger.log("Received URL: \(url, privacy: .public)")
+            let order = "Order#\(url.lastPathComponent)"
+            var newPath = NavigationPath()
+            selection = Panel.truck
+            Task {
+                newPath.append(Panel.orders)
+                newPath.append(order)
+                path = newPath
+            }
         }
         #endif
     }

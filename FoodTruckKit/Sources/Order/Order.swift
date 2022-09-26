@@ -72,6 +72,36 @@ public struct Order: Identifiable, Equatable {
         self.status = .completed
     }
     
+    public mutating func markAsNextStep(completion: (_ newStatus: OrderStatus) -> Void) {
+        switch status {
+        case .placed:
+            // Next step is to prepare.
+            self.status = .preparing
+            completion(self.status)
+        case .preparing:
+            // Next step is to complete the order.
+            self.status = .completed
+            completion(self.status)
+        default: //
+            completion(self.status)
+            return
+        }
+    }
+    
+    public mutating func markAsPreparing() {
+        if case .preparing = status {
+            return
+        }
+        self.status = .preparing
+    }
+    
+    public var isPreparing: Bool {
+        if case .preparing = status {
+            return true
+        }
+        return false
+    }
+    
     public var isComplete: Bool {
         if case .completed = status {
             return true
@@ -178,12 +208,25 @@ public enum OrderStatus: Int, Codable, Comparable {
         }
     }
     
+    public var buttonTitle: String {
+        switch self {
+        case .placed:
+            return String(localized: "Prepare", bundle: .module, comment: "Order next step.")
+        case .preparing:
+            return String(localized: "Ready", bundle: .module, comment: "Order next step.")
+        case .ready:
+            return String(localized: "Complete", bundle: .module, comment: "Order next step.")
+        case .completed:
+            return String(localized: "Complete", bundle: .module, comment: "Order next step.")
+        }
+    }
+    
     public var iconSystemName: String {
         switch self {
         case .placed:
             return "paperplane"
         case .preparing:
-            return "clock"
+            return "timer"
         case .ready:
             return "checkmark.circle"
         case .completed:
