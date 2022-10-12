@@ -1,9 +1,0 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A localization file for App Shortcut phrases.
-*/
-
-/* Intents. Donut-charts label, top donuts. */
-"${applicationName} Trends for ${timeframe}" = "${timeframe} أفضل الدونات لـ ${applicationName}";

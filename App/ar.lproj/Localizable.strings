@@ -17,6 +17,9 @@ A localization file.
 /* No comment provided by engineer. */
 "%@ for %@ on %@" = "%@ لـ  %@ في %@";
 
+/* Intents. Donut-charts label, top donuts. */
+"%@ Trends for %@" = "%@ أفضل الدونات لـ %@";
+
 /* No comment provided by engineer. */
 "%@, %@" = "%@، %@";
 

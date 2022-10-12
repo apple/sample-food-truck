@@ -50,13 +50,17 @@ struct TruckActivityWidget: Widget {
 }
 
 struct LiveActivityView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.isLuminanceReduced) var isLuminanceReduced
+    
     var orderNumber: String
     var timerRange: ClosedRange<Date>
     
     var body: some View {
         HStack {
             Image("IslandExpandedIcon")
-                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .clipShape(ContainerRelativeShape())
+                .opacity(isLuminanceReduced ? 0.5 : 1.0)
             OrderInfoView(orderNumber: orderNumber)
             Spacer()
             OrderTimerView(timerRange: timerRange)
@@ -64,7 +68,7 @@ struct LiveActivityView: View {
         .tint(.primary)
         .padding([.leading, .top, .bottom])
         .padding(.trailing, 32)
-        .activityBackgroundTint(Color("LiveActivityBackground"))
+        .activityBackgroundTint(colorScheme == .light ? Color("LiveActivityBackground") : Color("AccentColorDimmed"))
         .activitySystemActionForegroundColor(.primary)
     }
 }
@@ -77,6 +81,8 @@ struct ExpandedLeadingView: View {
 }
 
 struct OrderInfoView: View {
+    @Environment(\.isLuminanceReduced) var isLuminanceReduced
+    
     var orderNumber: String
     
     var body: some View {
@@ -90,16 +96,20 @@ struct OrderInfoView: View {
                 .font(.subheadline)
                 .fontWeight(.medium)
                 .foregroundStyle(.secondary)
+                .opacity(isLuminanceReduced ? 0.5 : 1.0)
         }
     }
 }
 
 struct OrderTimerView: View {
+    @Environment(\.isLuminanceReduced) var isLuminanceReduced
+    
     var timerRange: ClosedRange<Date>
     
     var body: some View {
         VStack(alignment: .trailing) {
             Text(timerInterval: timerRange, countsDown: true)
+                .monospacedDigit()
                 .multilineTextAlignment(.trailing)
                 .frame(width: 80)
                 .font(.title3)
@@ -109,6 +119,7 @@ struct OrderTimerView: View {
                 .font(.subheadline)
                 .fontWeight(.medium)
                 .foregroundStyle(.secondary)
+                .opacity(isLuminanceReduced ? 0.5 : 1.0)
         }
     }
 }
