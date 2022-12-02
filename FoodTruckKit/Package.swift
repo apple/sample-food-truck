@@ -13,9 +13,9 @@ let package = Package(
     name: "FoodTruckKit",
     defaultLocalization: "en",
     platforms: [
-        .macOS("13.0"),
-        .iOS("16.0"),
-        .macCatalyst("16.0")
+        .macOS("13.1"),
+        .iOS("16.2"),
+        .macCatalyst("16.2")
     ],
     products: [
         .library(

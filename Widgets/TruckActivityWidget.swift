@@ -137,4 +137,31 @@ struct ExpandedTrailingView: View {
         .tint(Color("LightIndigo"))
     }
 }
+
+struct TruckActivityPreviewProvider: PreviewProvider {
+    static let activityAttributes = TruckActivityAttributes(
+        orderID: "1234", order: [Donut.preview.id], sales: [Donut.preview.id: 4], activityName: "activity name"
+    )
+    
+    static let state = TruckActivityAttributes.ContentState(
+        timerRange: Date.now...Date(timeIntervalSinceNow: 30))
+    
+    static var previews: some View {
+        activityAttributes
+            .previewContext(state, viewKind: .dynamicIsland(.compact))
+            .previewDisplayName("Compact")
+        
+        activityAttributes
+            .previewContext(state, viewKind: .dynamicIsland(.expanded))
+            .previewDisplayName("Expanded")
+        
+        activityAttributes
+            .previewContext(state, viewKind: .content)
+            .previewDisplayName("Notification")
+        
+        activityAttributes
+            .previewContext(state, viewKind: .dynamicIsland(.minimal))
+            .previewDisplayName("Minimal")
+    }
+}
 #endif

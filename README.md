@@ -204,10 +204,14 @@ let activityAttributes = TruckActivityAttributes(
     activityName: "Order preparation activity."
 )
 
-let initialContentState = TruckActivityAttributes.ContentState(timerRange: Date.now...Date(timeIntervalSinceNow: Double(timerSeconds)))
+let future = Date(timeIntervalSinceNow: Double(timerSeconds))
+
+let initialContentState = TruckActivityAttributes.ContentState(timerRange: Date.now...future)
+
+let activityContent = ActivityContent(state: initialContentState, staleDate: Calendar.current.date(byAdding: .minute, value: 2, to: Date())!)
 
 do {
-    let myActivity = try Activity<TruckActivityAttributes>.request(attributes: activityAttributes, contentState: initialContentState,
+    let myActivity = try Activity<TruckActivityAttributes>.request(attributes: activityAttributes, content: activityContent,
         pushType: nil)
     print(" Requested MyActivity live activity. ID: \(myActivity.id)")
     postNotification()
@@ -256,7 +260,7 @@ Task {
     for activity in Activity<TruckActivityAttributes>.activities {
         // Check if this is the activity associated with this order.
         if activity.attributes.orderID == String(order.id.dropFirst(6)) {
-            await activity.end(dismissalPolicy: .immediate)
+            await activity.end(nil, dismissalPolicy: .immediate)
         }
     }
 }

@@ -49,7 +49,7 @@
 		E0510761283C187300FCE3E6 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37BE228233197007B925B /* AccountView.swift */; };
 		E0510763283C187300FCE3E6 /* FoodTruckKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0510733283C187300FCE3E6 /* FoodTruckKit */; };
 		E0510765283C187300FCE3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0C37BC82823189D007B925B /* Assets.xcassets */; };
-		E0510767283C187300FCE3E6 /* Widgets.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E0C37C3228234145007B925B /* Widgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E0510767283C187300FCE3E6 /* Widgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E0C37C3228234145007B925B /* Widgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E08260F828CA97B000071BA9 /* TruckActivityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08260F728CA97B000071BA9 /* TruckActivityWidget.swift */; };
 		E08260FA28CAA2FD00071BA9 /* TruckActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08260F928CAA2FD00071BA9 /* TruckActivityAttributes.swift */; };
 		E08260FB28CAA30D00071BA9 /* TruckActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08260F928CAA2FD00071BA9 /* TruckActivityAttributes.swift */; };
@@ -102,7 +102,7 @@
 		E0C37C4E2823515A007B925B /* FoodTruckKit in Frameworks */ = {isa = PBXBuildFile; productRef = E0C37C4D2823515A007B925B /* FoodTruckKit */; };
 		E0C37C4F2823517F007B925B /* OrdersWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C4428234166007B925B /* OrdersWidget.swift */; };
 		E0C37C5028235184007B925B /* ParkingSpotAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C4228234161007B925B /* ParkingSpotAccessory.swift */; };
-		E0C37C5328236A47007B925B /* Widgets.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E0C37C3228234145007B925B /* Widgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E0C37C5328236A47007B925B /* Widgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E0C37C3228234145007B925B /* Widgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E0C4A527283E8FD5007D5B83 /* ShowTopDonutsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C4A522283E8FD4007D5B83 /* ShowTopDonutsIntent.swift */; };
 		E0C4A528283E8FD5007D5B83 /* ShowTopDonutsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C4A522283E8FD4007D5B83 /* ShowTopDonutsIntent.swift */; };
 		E0C4A529283E8FD5007D5B83 /* ShowTopDonutsIntentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C4A523283E8FD4007D5B83 /* ShowTopDonutsIntentView.swift */; };
@@ -136,26 +136,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E0510766283C187300FCE3E6 /* Embed App Extensions */ = {
+		E0510766283C187300FCE3E6 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E0510767283C187300FCE3E6 /* Widgets.appex in Embed App Extensions */,
+				E0510767283C187300FCE3E6 /* Widgets.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0C37C5228236A2E007B925B /* Embed App Extensions */ = {
+		E0C37C5228236A2E007B925B /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				E0C37C5328236A47007B925B /* Widgets.appex in Embed App Extensions */,
+				E0C37C5328236A47007B925B /* Widgets.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -473,7 +473,7 @@
 				E0510734283C187300FCE3E6 /* Sources */,
 				E0510762283C187300FCE3E6 /* Frameworks */,
 				E0510764283C187300FCE3E6 /* Resources */,
-				E0510766283C187300FCE3E6 /* Embed App Extensions */,
+				E0510766283C187300FCE3E6 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -495,7 +495,7 @@
 				E0C37BBD2823189A007B925B /* Sources */,
 				E0C37BBE2823189A007B925B /* Frameworks */,
 				E0C37BBF2823189A007B925B /* Resources */,
-				E0C37C5228236A2E007B925B /* Embed App Extensions */,
+				E0C37C5228236A2E007B925B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -768,6 +768,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "App/Food-Truck-All-Info.plist";
@@ -779,10 +780,10 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphone*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Food-Truck${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -810,6 +811,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "App/Food-Truck-All-Info.plist";
@@ -821,10 +823,10 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphone*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Food-Truck${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -981,10 +983,10 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphone*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Food-Truck${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1023,10 +1025,10 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphone*]" = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Food-Truck${SAMPLE_CODE_DISAMBIGUATOR}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1055,7 +1057,7 @@
 				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1092,7 +1094,7 @@
 				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
