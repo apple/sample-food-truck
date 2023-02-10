@@ -1,5 +1,5 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
 A custom layout that places up to 3 views (tuned for `DonutView`) diagonally inside a square aspect ratio.

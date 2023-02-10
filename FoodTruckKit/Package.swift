@@ -1,7 +1,7 @@
 // swift-tools-version: 5.7
 
 /*
-See LICENSE folder for this sample’s licensing information.
+See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
 The FoodTruckKit package.
@@ -13,9 +13,9 @@ let package = Package(
     name: "FoodTruckKit",
     defaultLocalization: "en",
     platforms: [
-        .macOS("13.1"),
-        .iOS("16.2"),
-        .macCatalyst("16.2")
+        .macOS("13.3"),
+        .iOS("16.4"),
+        .macCatalyst("16.4")
     ],
     products: [
         .library(

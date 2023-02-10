@@ -1,13 +1,14 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
 A view that shows details about a city.
 */
 
 import SwiftUI
-import WeatherKit
 import FoodTruckKit
+@preconcurrency import WeatherKit
+@preconcurrency import CoreLocation
 
 /// The view that displays weather information about a city.
 ///

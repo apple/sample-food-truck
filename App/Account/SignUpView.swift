@@ -1,5 +1,5 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
 The view where the user can sign up for an account.
@@ -7,6 +7,7 @@ The view where the user can sign up for an account.
 
 import SwiftUI
 import FoodTruckKit
+import AuthenticationServices
 
 struct SignUpView: View {
     private enum FocusElement {
@@ -22,6 +23,7 @@ struct SignUpView: View {
     @ObservedObject var model: FoodTruckModel
 
     @EnvironmentObject private var accountStore: AccountStore
+    @Environment(\.authorizationController) private var authorizationController
     @Environment(\.dismiss) private var dismiss
     @FocusState private var focusedElement: FocusElement?
     @State private var usePasskey: Bool = true
@@ -47,7 +49,11 @@ struct SignUpView: View {
                 if !usePasskey {
                     LabeledContent("Password") {
                         SecureField("Password", text: $password)
+                        #if os(macOS)
                             .textContentType(.password)
+                        #elseif os(iOS)
+                            .textContentType(.newPassword)
+                        #endif
                             .multilineTextAlignment(.trailing)
                             .focused($focusedElement, equals: .password)
                             .labelsHidden()
@@ -69,12 +75,16 @@ struct SignUpView: View {
         }
         .formStyle(.grouped)
         .animation(.default, value: usePasskey)
+        #if !os(iOS)
         .frame(maxWidth: 500)
+        #endif
         .navigationTitle("Sign up")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Sign Up") {
-                    signUp()
+                    Task {
+                        await signUp()
+                    }
                 }
                 .disabled(!isFormValid)
             }
@@ -90,12 +100,12 @@ struct SignUpView: View {
         }
     }
 
-    private func signUp() {
-        Task { @MainActor in
+    private func signUp() async {
+        Task {
             if usePasskey {
-                try await accountStore.createPasskeyAccount(username: username)
+                await accountStore.createPasskeyAccount(authorizationController: authorizationController, username: username)
             } else {
-                try await accountStore.createPasswordAccount(username: username, password: password)
+                await accountStore.createPasswordAccount(username: username, password: password)
             }
             dismiss()
         }
@@ -108,26 +118,6 @@ struct SignUpView: View {
             return !username.isEmpty && !password.isEmpty
         }
     }
-
-//    @ViewBuilder
-//    private var changeSignUpTypeButton: some View {
-//        Group {
-//            switch signUpType {
-//            case .passkey:
-//                Button("Sign Up with Password") {
-//                    signUpType = .password
-//                }
-//            case .password:
-//                Button("Sign Up with Passkey") {
-//                    signUpType = .passkey
-//                    password = ""
-//                }
-//            }
-//        }
-//        .padding(8)
-//        .frame(maxWidth: .infinity)
-//        .font(.system(.subheadline))
-//    }
 }
 
 struct SignUpView_Previews: PreviewProvider {

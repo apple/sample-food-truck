@@ -27,7 +27,7 @@ To configure the Food Truck app without an Apple Developer account, follow these
 
 To configure the Food Truck All app to run on your devices, follow these steps:
 
-1. Open the sample with Xcode 14 or later.
+1. Open the sample with Xcode 14.3 or later.
 2. Select the top-level Food Truck project.
 3. For all targets, choose your team from the Team menu in the Signing & Capabilities pane, so Xcode can automatically manage your provisioning profile.
 4. Add the Associated Domains capability, and specify your domain with the `webcredentials` service. For more information about the `webcredentials` service, see [Associated Domains Entitlement](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains).
@@ -151,7 +151,7 @@ The *x* axis of the chart shows labels with the names and thumbnails of the item
 
 ## Obtain a weather forecast
 
-The app shows a forecasted temperature graph in the Forecast panel in the Truck view. The app obtains this data from the [`WeatherKit`](https://developer.apple.com/documentation/weatherkit/weatherservice) framework.
+The app shows a forecasted temperature graph in the Forecast panel in the Truck view. The app obtains this data from the [`WeatherKit`](https://developer.apple.com/documentation/weatherkit) framework.
 
 ``` swift
 .task(id: city.id) {

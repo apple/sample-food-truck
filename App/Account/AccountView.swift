@@ -1,5 +1,5 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
 The account view where the user can sign in and out.
@@ -8,11 +8,14 @@ The account view where the user can sign in and out.
 import SwiftUI
 import FoodTruckKit
 import StoreKit
+import AuthenticationServices
 
 struct AccountView: View {
     @ObservedObject var model: FoodTruckModel
 
     @EnvironmentObject private var accountStore: AccountStore
+    @Environment(\.authorizationController) private var authorizationController
+    
     @State private var isSignUpSheetPresented = false
     @State private var isSignOutAlertPresented = false
 
@@ -62,10 +65,9 @@ struct AccountView: View {
                 } else {
                     LabeledContent("Use existing account") {
                         Button("Sign In") {
-                            signIn()
-                        }
-                        .accountStorePresentationContext { provider in
-                            accountStore.presentationContextProvider = provider
+                            Task {
+                                await signIn()
+                            }
                         }
                     }
                     LabeledContent("Create new account") {
@@ -76,34 +78,27 @@ struct AccountView: View {
                 }
             }
         }
-        .frame(maxWidth: 500, maxHeight: .infinity)
         .formStyle(.grouped)
         .navigationTitle("Account")
         #if os(iOS)
         .navigationDestination(for: String.self) { _ in
             StoreSupportView()
         }
+        #else
+        .frame(maxWidth: 500, maxHeight: .infinity)
         #endif
         .sheet(isPresented: $isSignUpSheetPresented) {
             NavigationStack {
                 SignUpView(model: model)
-                    .accountStorePresentationContext { provider in
-                        accountStore.presentationContextProvider = provider
-                    }
             }
-        }
-        .accountStorePresentationContext { provider in
-            accountStore.presentationContextProvider = provider
         }
         .alert(isPresented: $isSignOutAlertPresented) {
             signOutAlert
         }
     }
-
-    private func signIn() {
-        Task { @MainActor in
-            try await accountStore.signIn()
-        }
+    
+    private func signIn() async {
+        await accountStore.signIntoPasskeyAccount(authorizationController: authorizationController)
     }
 
     private var signOutAlert: Alert {

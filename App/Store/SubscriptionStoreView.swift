@@ -1,5 +1,5 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
 The in-app purchase subscription view.
@@ -127,13 +127,11 @@ struct SubscriptionStoreView: View {
     
     var subscriptionCellsView: some View {
         ScrollView(.vertical) {
-            if let subscriptions = controller.subscriptions {
-                SubscriptionStoreOptionsView(
-                    subscriptions: subscriptions,
-                    selectedOption: $selectedSubscription
-                )
-                .padding(.top)
-            }
+            SubscriptionStoreOptionsView(
+                subscriptions: controller.subscriptions,
+                selectedOption: $selectedSubscription
+            )
+            .padding(.top)
         }
     }
 }

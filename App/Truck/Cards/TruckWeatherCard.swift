@@ -1,15 +1,15 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
 The weather card showing in the Truck view.
 */
 
 import SwiftUI
-import CoreLocation
 import Charts
-import WeatherKit
 import FoodTruckKit
+@preconcurrency import CoreLocation
+@preconcurrency import WeatherKit
 
 struct TruckWeatherCard: View {
     var location: CLLocation

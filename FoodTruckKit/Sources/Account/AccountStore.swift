@@ -1,5 +1,5 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
 AccountStore manages account sign in and out.
@@ -9,52 +9,103 @@ AccountStore manages account sign in and out.
 
 import AuthenticationServices
 import SwiftUI
+import Combine
 import os
 
-private extension Logger {
-    static let accounts = Logger(subsystem: "FoodTruck", category: "accounts")
+public extension Logger {
+    static let authorization = Logger(subsystem: "FoodTruck", category: "Food Truck accounts")
 }
 
+public enum AuthorizationHandlingError: Error {
+    case unknownAuthorizationResult(ASAuthorizationResult)
+    case otherError
+}
+
+extension AuthorizationHandlingError: LocalizedError {
+    public var errorDescription: String? {
+            switch self {
+            case .unknownAuthorizationResult:
+                return NSLocalizedString("Received an unknown authorization result.",
+                                         comment: "Human readable description of receiving an unknown authorization result.")
+            case .otherError:
+                return NSLocalizedString("Encountered an error handling the authorization result.",
+                                         comment: "Human readable description of an unknown error while handling the authorization result.")
+            }
+        }
+}
+
+@MainActor
 public final class AccountStore: NSObject, ObservableObject, ASAuthorizationControllerDelegate {
     @Published public private(set) var currentUser: User? = .default
     
     public weak var presentationContextProvider: ASAuthorizationControllerPresentationContextProviding?
-
+    
     public var isSignedIn: Bool {
         currentUser != nil
     }
-
-    @MainActor
-    public func signIn() async throws {
-        let credential = try await performRequests(signInRequests())
-
-        switch credential {
-        case let credential as ASPasswordCredential:
-            currentUser = .authenticated(username: credential.user)
-            
-        case let credential as ASAuthorizationPlatformPublicKeyCredentialAssertion:
-            guard let username = String(bytes: credential.userID, encoding: .utf8) else {
-                fatalError("Invalid credential: \(credential)")
-            }
-            currentUser = .authenticated(username: username)
-            
-        default:
-            fatalError("Invalid credential: \(credential)")
+    
+    public func signIntoPasskeyAccount(authorizationController: AuthorizationController,
+                                       options: ASAuthorizationController.RequestOptions = []) async {
+        do {
+            let authorizationResult = try await authorizationController.performRequests(
+                    signInRequests(),
+                    options: options
+            )
+            try await handleAuthorizationResult(authorizationResult)
+        } catch let authorizationError as ASAuthorizationError where authorizationError.code == .canceled {
+            // The user cancelled the authorization.
+            Logger.authorization.log("The user cancelled passkey authorization.")
+        } catch let authorizationError as ASAuthorizationError {
+            // Some other error occurred occurred during authorization.
+            Logger.authorization.error("Passkey authorization failed. Error: \(authorizationError.localizedDescription)")
+        } catch AuthorizationHandlingError.unknownAuthorizationResult(let authorizationResult) {
+            // Received an unknown response.
+            Logger.authorization.error("""
+            Passkey authorization handling failed. \
+            Received an unknown result: \(String(describing: authorizationResult))
+            """)
+        } catch {
+            // Some other error occurred while handling the authorization.
+            Logger.authorization.error("""
+            Passkey authorization handling failed. \
+            Caught an unknown error during passkey authorization or handling: \(error.localizedDescription)"
+            """)
+        }
+    }
+    
+    public func createPasskeyAccount(authorizationController: AuthorizationController, username: String,
+                                     options: ASAuthorizationController.RequestOptions = []) async {
+        do {
+            let authorizationResult = try await authorizationController.performRequests(
+                    [passkeyRegistrationRequest(username: username)],
+                    options: options
+            )
+            try await handleAuthorizationResult(authorizationResult, username: username)
+        } catch let authorizationError as ASAuthorizationError where authorizationError.code == .canceled {
+            // The user cancelled the registration.
+            Logger.authorization.log("The user cancelled passkey registration.")
+        } catch let authorizationError as ASAuthorizationError {
+            // Some other error occurred occurred during registration.
+            Logger.authorization.error("Passkey registration failed. Error: \(authorizationError.localizedDescription)")
+        } catch AuthorizationHandlingError.unknownAuthorizationResult(let authorizationResult) {
+            // Received an unknown response.
+            Logger.authorization.error("""
+            Passkey registration handling failed. \
+            Received an unknown result: \(String(describing: authorizationResult))
+            """)
+        } catch {
+            // Some other error occurred while handling the registration.
+            Logger.authorization.error("""
+            Passkey registration handling failed. \
+            Caught an unknown error during passkey registration or handling: \(error.localizedDescription).
+            """)
         }
     }
 
-    @MainActor
-    public func createPasskeyAccount(username: String) async throws {
-        try await performRequests(registerPasskeyRequests(username: username))
+    public func createPasswordAccount(username: String, password: String) async {
         currentUser = .authenticated(username: username)
     }
 
-    @MainActor
-    public func createPasswordAccount(username: String, password: String) async throws {
-        currentUser = .authenticated(username: username)
-    }
-
-    @MainActor
     public func signOut() {
         currentUser = nil
     }
@@ -62,8 +113,6 @@ public final class AccountStore: NSObject, ObservableObject, ASAuthorizationCont
     // MARK: - Private
 
     private static let relyingPartyIdentifier = "example.com"
-    private var currentController: ASAuthorizationController?
-    private var currentContinuation: CheckedContinuation<ASAuthorizationCredential, Error>?
 
     private func passkeyChallenge() async -> Data {
         Data("passkey challenge".utf8)
@@ -83,124 +132,34 @@ public final class AccountStore: NSObject, ObservableObject, ASAuthorizationCont
         await [passkeyAssertionRequest(), ASAuthorizationPasswordProvider().createRequest()]
     }
 
-    private func registerPasskeyRequests(username: String) async -> [ASAuthorizationRequest] {
-        await [passkeyRegistrationRequest(username: username)]
-    }
-
-    private func preparedAuthorizationController(with requests: [ASAuthorizationRequest]) -> ASAuthorizationController {
-        let authorizationController = ASAuthorizationController(authorizationRequests: requests)
-        authorizationController.delegate = self
-        authorizationController.presentationContextProvider = presentationContextProvider
-        return authorizationController
-    }
-
-    @discardableResult
-    private func performRequests(_ requests: [ASAuthorizationRequest]) async throws -> ASAuthorizationCredential {
-        currentController?.cancel()
-        currentController = nil
-
-        return try await withCheckedThrowingContinuation {
-            currentContinuation = $0
-
-            currentController = preparedAuthorizationController(with: requests)
-            currentController?.performRequests()
-        }
-    }
-
-    // MARK: - ASAuthorizationControllerDelegate
-
-    public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        Logger.accounts.log("Authentication finished: \(authorization)")
-
-        currentContinuation?.resume(returning: authorization.credential)
-        currentContinuation = nil
-
-        currentController = nil
-    }
-
-    public func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        Logger.accounts.error("Authentication failed: \(error as NSError)")
-
-        currentContinuation?.resume(throwing: error)
-        currentContinuation = nil
-
-        currentController = nil
-    }
-}
-
-#if canImport(UIKit)
-private typealias ViewRepresentable = UIViewRepresentable
-#elseif canImport(AppKit)
-private typealias ViewRepresentable = NSViewRepresentable
-#endif
-
-public extension View {
-    func accountStorePresentationContext(
-        onProviderCreated: @escaping (ASAuthorizationControllerPresentationContextProviding) -> Void
-    ) -> some View {
-        modifier(PresentationContextProviderModifier(onProviderCreated: onProviderCreated))
-    }
-}
-
-struct PresentationContextProviderModifier: ViewModifier {
-    var onProviderCreated: (ASAuthorizationControllerPresentationContextProviding) -> Void
+    // MARK: - Handle the results.
     
-    public init(onProviderCreated: @escaping (ASAuthorizationControllerPresentationContextProviding) -> Void) {
-        self.onProviderCreated = onProviderCreated
-    }
-    
-    public func body(content: Content) -> some View {
-        content.background {
-            PresentationContextProviderView(onProviderCreated: onProviderCreated)
-                .opacity(0)
-        }
-    }
-}
-
-struct PresentationContextProviderView: ViewRepresentable {
-    #if canImport(UIKit)
-    typealias ViewType = UIView
-    #elseif canImport(AppKit)
-    typealias ViewType = NSView
-    #endif
-    
-    var onProviderCreated: (ASAuthorizationControllerPresentationContextProviding) -> Void
-    
-    class ContextProvidingView: ViewType, ASAuthorizationControllerPresentationContextProviding {
-        init(onProviderCreated: (ASAuthorizationControllerPresentationContextProviding) -> Void) {
-            super.init(frame: .zero)
-            onProviderCreated(self)
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-        func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-            guard let window else {
-                fatalError()
+    private func handleAuthorizationResult(_ authorizationResult: ASAuthorizationResult, username: String? = nil) async throws {
+        switch authorizationResult {
+        case let .password(passwordCredential):
+            Logger.authorization.log("Password authorization succeeded: \(passwordCredential)")
+            currentUser = .authenticated(username: passwordCredential.user)
+        case let .passkeyAssertion(passkeyAssertion):
+            // The login was successful.
+            Logger.authorization.log("Passkey authorization succeeded: \(passkeyAssertion)")
+            guard let username = String(bytes: passkeyAssertion.userID, encoding: .utf8) else {
+                fatalError("Invalid credential: \(passkeyAssertion)")
             }
-            return window
+            currentUser = .authenticated(username: username)
+        case let .passkeyRegistration(passkeyRegistration):
+            // The registration was successful.
+            Logger.authorization.log("Passkey registration succeeded: \(passkeyRegistration)")
+            if let username {
+                currentUser = .authenticated(username: username)
+            }
+        default:
+            Logger.authorization.error("Received an unknown authorization result.")
+            // Throw an error and return to the caller.
+            throw AuthorizationHandlingError.unknownAuthorizationResult(authorizationResult)
         }
-    }
-    
-    #if canImport(UIKit)
-    func makeUIView(context: Context) -> ContextProvidingView {
-        ContextProvidingView(onProviderCreated: onProviderCreated)
-    }
-    
-    func updateUIView(_ view: ContextProvidingView, context: Context) {
         
+        // In a real app, call the code at this location to obtain and save an authentication token to the keychain and sign in the user.
     }
-    #elseif canImport(AppKit)
-    func makeNSView(context: Context) -> ContextProvidingView {
-        ContextProvidingView(onProviderCreated: onProviderCreated)
-    }
-    
-    func updateNSView(_ view: ContextProvidingView, context: Context) {
-        
-    }
-    #endif
 }
 
 #endif // os(iOS) || os(macOS)

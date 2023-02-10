@@ -1,11 +1,12 @@
 /*
-See LICENSE folder for this sample’s licensing information.
+See the LICENSE.txt file for this sample’s licensing information.
 
 Abstract:
 The food truck model.
 */
 
 import SwiftUI
+import Combine
 
 @MainActor
 public class FoodTruckModel: ObservableObject {
