@@ -156,7 +156,7 @@ extension SocialFeedPost {
 }
 
 extension LabelStyle where Self == SocialFeedTagLabelStyle {
-    static var socialFeedTag: SocialFeedTagLabelStyle { .init() }
+    static var socialFeedTag: Self { .init() }
 }
 
 struct SocialFeedTagLabelStyle: LabelStyle {
