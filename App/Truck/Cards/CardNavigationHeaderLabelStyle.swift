@@ -28,9 +28,7 @@ struct CardNavigationHeaderLabelStyle: LabelStyle {
 }
 
 extension LabelStyle where Self == CardNavigationHeaderLabelStyle {
-    static var cardNavigationHeader: CardNavigationHeaderLabelStyle {
-        CardNavigationHeaderLabelStyle()
-    }
+    static var cardNavigationHeader: Self { .init() }
 }
 
 struct CardNavigationHeaderLabelStyle_Previews: PreviewProvider {
