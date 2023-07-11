@@ -1,0 +1,59 @@
+name: maestro
+on:
+  push:
+    branches:
+      - main
+      - hj/test-maestro
+jobs:
+  test:
+    name: Maestro Smoke Tests
+    runs-on: macos-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Install Maestro
+        run: "curl -Ls \"https://get.maestro.mobile.dev\" | bash"
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+        xcode-version: latest-stable
+
+      - name: Install dependencies
+        run: bundle exec rake bootstrap
+      - name: Install idb companion
+        run: |
+          brew tap facebook/fb
+          brew install facebook/fb/idb-companion
+
+      - name: Create Simulator
+        run: |
+          xcrun simctl boot "iPhone 14 Pro"
+
+      - name: Build App
+        run: |
+          mkdir -p .build/Xcode
+          xcrun xcodebuild -scheme 'Food Truck' \
+          -project 'Food Truck.xcodeproj' \
+          -configuration Debug \
+          -sdk 'iphonesimulator' \
+          -destination 'generic/platform=iOS Simulator' \
+          -derivedDataPath=.build/Xcode \
+          xcrun simctl install booted .build/Xcode/DerivedData/Build/Products/Debug-iphonesimulator/Food\ Truck.app
+          xcrun simctl launch booted com.example.apple-samplecode.Food-Truck
+
+      - name: Run Maestro tests
+        run: |
+          $HOME/.maestro/bin/maestro test Maestro/truck-test.yml/
+      - name: Upload Maestro Screenshot Artifact
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: maestro-failure-artifacts
+          path: /Users/runner/.maestro/tests/

@@ -1,0 +1,8 @@
+
+appId: com.example.apple-samplecode.Food-Truck
+---
+- launchApp
+- tapOn: "New Orders"
+- tapOn: "Truck"
+- tapOn: "Forecast"
+- tapOn: "Truck"

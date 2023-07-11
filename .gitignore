@@ -4,6 +4,7 @@
 
 # Finder
 .DS_Store
+.build/
 
 # Xcode - User files
 xcuserdata/
