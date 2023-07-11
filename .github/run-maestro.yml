@@ -1,9 +1,11 @@
 name: maestro
 on:
+  workflow-dispatch:
   push:
     branches:
       - main
       - hj/test-maestro
+  
 jobs:
   test:
     name: Maestro Smoke Tests
