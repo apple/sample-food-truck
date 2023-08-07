@@ -1,0 +1,271 @@
+/*
+See the LICENSE.txt file for this sample’s licensing information.
+
+Abstract:
+A localization file.
+*/
+
+/* No comment provided by engineer. */
+"+%lld" = "+%lld";
+
+/* Apple's headquarters in California. */
+"Apple Park" = "Apple Park";
+
+/* A landmark in San Francisco. */
+"Bay Bridge" = "Bay Bridge";
+
+/* A landmark in London. */
+"Big Ben" = "Big Ben";
+
+/* The main flavor-profile of a donut. */
+"Bitter" = "Bitter";
+
+/* A donut-flavor name. */
+"Black Raspberry" = "Black Raspberry";
+
+/* Blueberry-flavored dough. */
+"Blueberry Dough" = "Blueberry Dough";
+
+/* Blueberry-flavored icing drizzled over the donut. */
+"Blueberry Drizzle" = "Blueberry Drizzle";
+
+/* A donut-flavor name. */
+"Blueberry Frosted" = "Blueberry Frosted";
+
+/* Blueberry-flavored icing in a criss-cross pattern. */
+"Blueberry Lattice" = "Blueberry Lattice";
+
+/* Blueberry-flavored icing in parallel lines. */
+"Blueberry Lines" = "Blueberry Lines";
+
+/* Blueberry-flavored glaze. */
+"Blueberry Spread" = "Blueberry Spread";
+
+/* A landmark in London. */
+"Buckingham Palace" = "Buckingham Palace";
+
+/* Chocolate-flavored dough. */
+"Chocolate Dough" = "Chocolate Dough";
+
+/* Blueberry-flavored icing drizzled over the donut. */
+"Chocolate Drizzle" = "Chocolate Drizzle";
+
+/* Chocolate-flavored glaze. */
+"Chocolate Glaze" = "Chocolate Glaze";
+
+/* Chocolate-flavored icing in a criss-cross pattern. */
+"Chocolate Lattice" = "Chocolate Lattice";
+
+/* Chocolate-flavored icing in parallel lines. */
+"Chocolate Lines" = "Chocolate Lines";
+
+/* A landmark in San Francisco. */
+"Coit Tower" = "Coit Tower";
+
+/* Order status. */
+"Completed" = "Completed";
+
+/* A donut-flavor name. */
+"Cosmos" = "Cosmos";
+
+/* A city in California. */
+"Cupertino" = "Cupertino";
+
+/* A donut-flavor name. */
+"Custard" = "Custard";
+
+/* A donut-flavor name. */
+"Daytime" = "Daytime";
+
+/* A landmark in San Francisco. */
+"Ferry Building" = "Ferry Building";
+
+/* A donut-flavor name. */
+"Figure Skater" = "Figure Skater";
+
+/* A donut-flavor name. */
+"Fire Zest" = "Fire Zest";
+
+/* A landmark in San Francisco. */
+"Fisherman's Wharf" = "Fisherman's Wharf";
+
+/* A landmark in San Francisco. */
+"Golden Gate Bridge" = "Golden Gate Bridge";
+
+/* One of Apple's buildings in California. */
+"Infinite Loop" = "Infinite Loop";
+
+/* A donut-flavor name. */
+"Lemon Chocolate" = "Lemon Chocolate";
+
+/* Lemon-flavored icing drizzled over the donut. */
+"Lemon Drizzle" = "Lemon Drizzle";
+
+/* Lemon-flavored icing in a criss-cross pattern. */
+"Lemon Lattice" = "Lemon Lattice";
+
+/* Lemon-flavored icing in parallel lines. */
+"Lemon Lines" = "Lemon Lines";
+
+/* Lemon-flavored glaze. */
+"Lemon Spread" = "Lemon Spread";
+
+/* Lemonade-flavored dough. */
+"Lemonade" = "Lemonade";
+
+/* A city in England. */
+"London" = "London";
+
+/* A landmark in London. */
+"Marble Arch" = "Marble Arch";
+
+/* New donut-placeholder name. */
+"New Donut" = "New Donut";
+
+/* A donut-flavor name. */
+"Nighttime" = "Nighttime";
+
+/* A landmark in San Francisco. */
+"Oracle Park" = "Oracle Park";
+
+/* Order label. */
+"Order" = "Order";
+
+/* A landmark in London. */
+"Piccadilly Circus" = "Piccadilly Circus";
+
+/* A donut-flavor name. */
+"Picnic Basket" = "Picnic Basket";
+
+/* Order status. */
+"Placed" = "Placed";
+
+/* Plain donut dough. */
+"Plain" = "Plain";
+
+/* A donut-flavor name. */
+"Powdered Chocolate" = "Powdered Chocolate";
+
+/* Powdered donut dough. */
+"Powdered Dough" = "Powdered Dough";
+
+/* A donut-flavor name. */
+"Powdered Strawberry" = "Powdered Strawberry";
+
+/* Finely ground sugar to decorate or add texture. */
+"Powdered Sugar" = "Powdered Sugar";
+
+/* Order status. */
+"Preparing" = "Preparing";
+
+/* A donut-flavor name. */
+"Rainbow" = "Rainbow";
+
+/* Rainbow-colored glaze. */
+"Rainbow Glaze" = "Rainbow Glaze";
+
+/* Order status. */
+"Ready" = "Ready";
+
+/* The main flavor-profile of a donut. */
+"Salty" = "Salty";
+
+/* A city in California. */
+"San Francisco" = "San Francisco";
+
+/* The main flavor-profile of a donut. */
+"Savory" = "Savory";
+
+/* A landmark in London. */
+"Shakespeare's Globe" = "Shakespeare's Globe";
+
+/* The main flavor-profile of a donut. */
+"Sour" = "Sour";
+
+/* Sour-apple-flavored icing drizzled over the donut. */
+"Sour Apple Drizzle" = "Sour Apple Drizzle";
+
+/* Sour-apple-flavored icing in a criss-cross pattern. */
+"Sour Apple Lattice" = "Sour Apple Lattice";
+
+/* Sour-apple-flavored icing in parallel lines. */
+"Sour Apple Lines" = "Sour Apple Lines";
+
+/* Sour-candy-flavored dough. */
+"Sour Candy" = "Sour Candy";
+
+/* Sour-candy-flavored glaze. */
+"Sour Candy Glaze" = "Sour Candy Glaze";
+
+/* The main flavor-profile of a donut. */
+"Spicy" = "Spicy";
+
+/* Spicy-sauce-flavored icing drizzled over the donut. */
+"Spicy Sauce Drizzle" = "Spicy Sauce Drizzle";
+
+/* Spicy-sauce-flavored icing in a criss-cross pattern. */
+"Spicy Sauce Lattice" = "Spicy Sauce Lattice";
+
+/* Spicy-sauce-flavored icing in parallel lines. */
+"Spicy Sauce Lines" = "Spicy Sauce Lines";
+
+/* Spicy glaze. */
+"Spicy Spread" = "Spicy Spread";
+
+/* Small pieces of confectionery to decorate or add texture. */
+"Sprinkles" = "Sprinkles";
+
+/* Star-shaped pieces of confectionery to decorate or add texture. */
+"Star Sprinkles" = "Star Sprinkles";
+
+/* Strawberry-flavored dough. */
+"Strawberry Dough" = "Strawberry Dough";
+
+/* Strawyberry-flavored icing drizzled over the donut. */
+"Strawberry Drizzle" = "Strawberry Drizzle";
+
+/* Strawberry-flavored glaze. */
+"Strawberry Glaze" = "Strawberry Glaze";
+
+/* Strawberry-flavored icing in a criss-cross pattern. */
+"Strawberry Lattice" = "Strawberry Lattice";
+
+/* Strawberry-flavored icing in parallel lines. */
+"Strawberry Lines" = "Strawberry Lines";
+
+/* A donut-flavor name. */
+"Strawberry Sprinkles" = "Strawberry Sprinkles";
+
+/* Sugar-flavored icing drizzled over the donut. */
+"Sugar Drizzle" = "Sugar Drizzle";
+
+/* Sugar-flavored icing in a criss-cross pattern. */
+"Sugar Lattice" = "Sugar Lattice";
+
+/* Sugar-flavored icing in parallel lines. */
+"Sugar Lines" = "Sugar Lines";
+
+/* A donut-flavor name. */
+"Super Lemon" = "Super Lemon";
+
+/* A landmark in San Francisco. */
+"Sutro Tower" = "Sutro Tower";
+
+/* The main flavor-profile of a donut. */
+"Sweet" = "Sweet";
+
+/* A landmark in San Francisco. */
+"The Castro Theatre" = "The Castro Theatre";
+
+/* A donut-flavor name. */
+"The Classic" = "The Classic";
+
+/* Date label used to display or filter content by date. */
+"Today" = "Today";
+
+/* A landmark in London. */
+"Tower Bridge" = "Tower Bridge";
+
+/* Date label used to display or filter content by date. */
+"Yesterday" = "Yesterday";
+

@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "EC1B4D09-E76A-4D18-AC8B-E8733C86F35E",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:",
+          "identifier" : "DonutUI",
+          "name" : "DonutUI"
+        }
+      ]
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "DonutUITests",
+        "name" : "DonutUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
