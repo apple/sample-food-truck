@@ -24,7 +24,7 @@
 		E0510740283C187300FCE3E6 /* StoreSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C22282333C9007B925B /* StoreSupportView.swift */; };
 		E0510741283C187300FCE3E6 /* DonutEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37BF328233374007B925B /* DonutEditor.swift */; };
 		E0510742283C187300FCE3E6 /* SalesHistoryChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E039E3532834AC4800508176 /* SalesHistoryChart.swift */; };
-		E0510746283C187300FCE3E6 /* RefundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C24282333C9007B925B /* RefundView.swift */; platformFilters = (ios, ); };
+		E0510746283C187300FCE3E6 /* RefundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C24282333C9007B925B /* RefundView.swift */; platformFilter = ios; };
 		E0510747283C187300FCE3E6 /* UnlockFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C21282333C9007B925B /* UnlockFeatureView.swift */; };
 		E0510748283C187300FCE3E6 /* CardNavigationHeaderLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DC3642833222500040525 /* CardNavigationHeaderLabelStyle.swift */; };
 		E0510749283C187300FCE3E6 /* TruckDonutsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DC3682833222700040525 /* TruckDonutsCard.swift */; };
@@ -90,7 +90,7 @@
 		E0C37C27282333C9007B925B /* UnlockFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C21282333C9007B925B /* UnlockFeatureView.swift */; };
 		E0C37C28282333C9007B925B /* StoreSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C22282333C9007B925B /* StoreSupportView.swift */; };
 		E0C37C29282333C9007B925B /* SocialFeedPlusSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C23282333C9007B925B /* SocialFeedPlusSettings.swift */; };
-		E0C37C2A282333C9007B925B /* RefundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C24282333C9007B925B /* RefundView.swift */; platformFilters = (ios, ); };
+		E0C37C2A282333C9007B925B /* RefundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C24282333C9007B925B /* RefundView.swift */; platformFilter = ios; };
 		E0C37C2D2823375B007B925B /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C37C2C2823375B007B925B /* App.swift */; };
 		E0C37C3428234145007B925B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C37C3328234145007B925B /* WidgetKit.framework */; };
 		E0C37C3628234145007B925B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0C37C3528234145007B925B /* SwiftUI.framework */; };
@@ -162,7 +162,7 @@
 
 /* Begin PBXFileReference section */
 		6178CE6D2845B07E00F240E8 /* CardNavigationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNavigationHeader.swift; sourceTree = "<group>"; };
-		7AE906C103F323E6CEF38CA5 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE.txt; sourceTree = "<group>"; };
+		7AE906C103F323E6CEF38CA5 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		84ACCDC5282D671600756FB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		84FE360B28404A410082F01A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		84FE360C28404A830082F01A /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 		E0C4A525283E8FD5007D5B83 /* TopDonutSalesChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopDonutSalesChart.swift; sourceTree = "<group>"; };
 		E0C4A526283E8FD5007D5B83 /* TopFiveDonutsChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopFiveDonutsChart.swift; sourceTree = "<group>"; };
 		E0C4A534283EBD67007D5B83 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
-		F8C1D33EEFB6F5E9930C5AA2 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
+		F8C1D33EEFB6F5E9930C5AA2 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -767,7 +767,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 78LB44W9PH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
@@ -811,7 +811,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 78LB44W9PH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
@@ -972,11 +972,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 78LB44W9PH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1014,11 +1015,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 78LB44W9PH;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1056,9 +1058,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = Widgets/Widgets.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 78LB44W9PH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
@@ -1093,9 +1096,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = Widgets/Widgets.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 78LB44W9PH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
