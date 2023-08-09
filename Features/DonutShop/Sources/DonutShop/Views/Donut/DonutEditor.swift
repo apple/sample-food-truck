@@ -8,17 +8,14 @@ The donut editor view.
 import SwiftUI
 import Decide
 
-final class NewDonut {
-    final class Donut: KeyedState<Int> {
-        @Mutable @Property
-        var name = "New Donut"
-    }
+final class NewDonutState: AtomicState {
+    @Mutable @Property
+    var donut = Donut.preview
 }
 
 struct DonutEditor: View {
-    @Binding var donut: Donut
 
-    @BindKeyed(\NewDonut.Donut.$name) var name
+    @Bind(\NewDonutState.$donut) var donut
 
     var body: some View {
         ZStack {
@@ -50,11 +47,9 @@ struct DonutEditor: View {
                 }
             }
         }
-        .navigationTitle(donut.name)
+        .navigationTitle($donut.name)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarRole(.editor)
-        // We don't want store messages to interrupt any donut editing.
-//        .storeMessagesDeferred(true)
     }
     
     var donutViewer: some View {
@@ -69,8 +64,7 @@ struct DonutEditor: View {
     @ViewBuilder
     var editorContent: some View {
         Section("Donut") {
-            TextField("Name", text: name.makeBinding(donut.id), prompt: Text("Donut Name"))
-//            TextField("Name", text: name[donut.id], prompt: Text("Donut Name"))
+            TextField("Name", text: $donut.name, prompt: Text("Donut Name"))
         }
         
         Section("Flavor Profile") {
@@ -156,10 +150,8 @@ struct DonutEditor: View {
 
 struct DonutEditor_Previews: PreviewProvider {
     struct Preview: View {
-        @State private var donut = Donut.preview
-
         var body: some View {
-            DonutEditor(donut: $donut)
+            DonutEditor()
         }
     }
 
