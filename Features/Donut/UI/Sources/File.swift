@@ -5,11 +5,16 @@
 //  Created by Maxim Bazarov on 07.08.23.
 //
 
+import DonutCatalog
 import Foundation
-import DonutState
 import SwiftUI
+import UniformTypeIdentifiers
 
-public extension Flavor {
+public extension UTType {
+    static let donut = UTType(exportedAs: "com.example.apple-samplecode.donut")
+}
+
+public extension Flavor.Kind {
     var name: String {
         switch self {
         case .salty:
@@ -27,7 +32,7 @@ public extension Flavor {
         }
     }
 
-    public var image: Image {
+    var image: Image {
         Image.flavorSymbol(self)
     }
 }
@@ -37,7 +42,7 @@ public extension Image {
         Image("donut", bundle: .module)
     }
 
-    static func flavorSymbol(_ flavor: Flavor) -> Image {
+    static func flavorSymbol(_ flavor: Flavor.Kind) -> Image {
         switch flavor {
         case .salty:
             return Image("salty", bundle: .module)
@@ -55,61 +60,73 @@ public extension Image {
     }
 }
 
-public extension Ingredient {
-    var id: String { "\(Self.imageAssetPrefix)/\(name)" }
-}
+// Computed: imageThumbnail
+//    func image(thumbnail: Bool) -> Image {
+//        Image("\(Self.imageAssetPrefix)/\(imageAssetName)-\(thumbnail ? "thumb" : "full")", bundle: .module)
+//    }
 
-public extension Ingredient {
-    func image(thumbnail: Bool) -> Image {
-        Image("\(Self.imageAssetPrefix)/\(imageAssetName)-\(thumbnail ? "thumb" : "full")", bundle: .module)
+
+
+
+
+extension Donut {
+#if(DEBUG) {
+    struct Glaze {
+
+        let name: String
+        let image: String
+        let flavor: Flavor.Profile
+
+
+        static let blueberry = Glaze(
+            name: String(localized: "Blueberry Spread", bundle: .module, comment: "Blueberry-flavored glaze."),
+            imageAssetName: "blue",
+            flavors: FlavorProfile(salty: 1, sweet: 3, sour: -1, savory: 2)
+        )
+
     }
 }
 
-public extension Donut.Glaze {
-    static let blueberry = Donut.Glaze(
-        name: String(localized: "Blueberry Spread", bundle: .module, comment: "Blueberry-flavored glaze."),
-        imageAssetName: "blue",
-        flavors: FlavorProfile(salty: 1, sweet: 3, sour: -1, savory: 2)
-    )
 
-    static let chocolate = Donut.Glaze(
-        name: String(localized: "Chocolate Glaze", bundle: .module, comment: "Chocolate-flavored glaze."),
-        imageAssetName: "brown",
-        flavors: FlavorProfile(salty: 1, sweet: 1, bitter: 1, savory: 2)
-    )
+static let chocolate = Donut.Glaze(
+    name: String(localized: "Chocolate Glaze", bundle: .module, comment: "Chocolate-flavored glaze."),
+    imageAssetName: "brown",
+    flavors: FlavorProfile(salty: 1, sweet: 1, bitter: 1, savory: 2)
+)
 
-    static let sourCandy = Donut.Glaze(
-        name: String(localized: "Sour Candy Glaze", bundle: .module, comment: "Sour-candy-flavored glaze."),
-        imageAssetName: "green",
-        flavors: FlavorProfile(bitter: 1, sour: 3, savory: -1, spicy: 2)
-    )
+static let sourCandy = Donut.Glaze(
+    name: String(localized: "Sour Candy Glaze", bundle: .module, comment: "Sour-candy-flavored glaze."),
+    imageAssetName: "green",
+    flavors: FlavorProfile(bitter: 1, sour: 3, savory: -1, spicy: 2)
+)
 
-    static let spicy = Donut.Glaze(
-        name: String(localized: "Spicy Spread", bundle: .module, comment: "Spicy glaze."),
-        imageAssetName: "orange",
-        flavors: FlavorProfile(salty: 1, sour: 1, spicy: 3)
-    )
+static let spicy = Donut.Glaze(
+    name: String(localized: "Spicy Spread", bundle: .module, comment: "Spicy glaze."),
+    imageAssetName: "orange",
+    flavors: FlavorProfile(salty: 1, sour: 1, spicy: 3)
+)
 
-    static let strawberry = Donut.Glaze(
-        name: String(localized: "Strawberry Glaze", bundle: .module, comment: "Strawberry-flavored glaze."),
-        imageAssetName: "pink",
-        flavors: FlavorProfile(salty: 1, sweet: 2, savory: 2)
-    )
+static let strawberry = Donut.Glaze(
+    name: String(localized: "Strawberry Glaze", bundle: .module, comment: "Strawberry-flavored glaze."),
+    imageAssetName: "pink",
+    flavors: FlavorProfile(salty: 1, sweet: 2, savory: 2)
+)
 
-    static let lemon = Donut.Glaze(
-        name: String(localized: "Lemon Spread", bundle: .module, comment: "Lemon-flavored glaze."),
-        imageAssetName: "yellow",
-        flavors: FlavorProfile(sweet: 1, sour: 3, spicy: 1)
-    )
+static let lemon = Donut.Glaze(
+    name: String(localized: "Lemon Spread", bundle: .module, comment: "Lemon-flavored glaze."),
+    imageAssetName: "yellow",
+    flavors: FlavorProfile(sweet: 1, sour: 3, spicy: 1)
+)
 
-    static let rainbow = Donut.Glaze(
-        name: String(localized: "Rainbow Glaze", bundle: .module, comment: "Rainbow-colored glaze."),
-        imageAssetName: "rainbow",
-        flavors: FlavorProfile(salty: 2, sweet: 2, spicy: 1)
-    )
+static let rainbow = Donut.Glaze(
+    name: String(localized: "Rainbow Glaze", bundle: .module, comment: "Rainbow-colored glaze."),
+    imageAssetName: "rainbow",
+    flavors: FlavorProfile(salty: 2, sweet: 2, spicy: 1)
+)
 
-    static let all = [blueberry, chocolate, sourCandy, spicy, strawberry, lemon, rainbow]
+static let all = [blueberry, chocolate, sourCandy, spicy, strawberry, lemon, rainbow]
 }
+
 
 
 public extension Donut.Topping {

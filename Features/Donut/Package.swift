@@ -12,26 +12,38 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "DonutState",
-            targets: ["DonutState"]),
+            name: "DonutCatalog",
+            targets: ["DonutCatalog"]),
+        .library(
+            name: "DonutSales",
+            targets: ["DonutSales"]),
         .library(
             name: "DonutUI",
             targets: ["DonutUI"]),
     ],
+    dependencies: [
+        .package(url: "git@github.com:MaximBazarov/Decide.git", .upToNextMajor(from: "0.0.1"))
+    ],
     targets: [
         .target(
-            name: "DonutState",
-            path: "State/Sources"
+            name: "DonutCatalog",
+            dependencies: ["Decide"],
+            path: "Catalog/Sources"
+        ),
+        .target(
+            name: "DonutSales",
+            dependencies: ["Decide"],
+            path: "Sales/Sources"
         ),
         .target(
             name: "DonutUI",
-            dependencies: ["DonutState"],
+            dependencies: ["DonutCatalog"],
             path: "UI/Sources"
         ),
         .testTarget(
-            name: "DonutStateTests",
-            dependencies: ["DonutState"],
-            path: "State/Tests"
+            name: "DonutCatalog-Tests",
+            dependencies: ["DonutCatalog"],
+            path: "Catalog/Tests"
         ),
         .testTarget(
             name: "DonutUITests",
