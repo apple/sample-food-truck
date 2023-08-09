@@ -29,11 +29,7 @@ public struct DonutStackView: View {
                     .foregroundStyle(.secondary)
                     .font(.caption2)
                     .padding(4)
-                    #if !os(watchOS)
                     .background(.thinMaterial, in: Capsule())
-                    #else
-                    .background(in: Capsule())
-                    #endif
                     .padding(4)
             }
         }

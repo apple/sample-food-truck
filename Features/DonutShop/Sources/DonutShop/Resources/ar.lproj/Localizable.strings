@@ -1,0 +1,271 @@
+/*
+See the LICENSE.txt file for this sample’s licensing information.
+
+Abstract:
+A localization file.
+*/
+
+/* No comment provided by engineer. */
+"+%lld" = "+%lld";
+
+/* Apple's headquarters in California. */
+"Apple Park" = "Apple Park";
+
+/* A landmark in San Francisco. */
+"Bay Bridge" = "جسر Bay Bridge";
+
+/* A landmark in London. */
+"Big Ben" = "بيغ بين";
+
+/* The main flavor-profile of a donut. */
+"Bitter" = "مُرة";
+
+/* A donut-flavor name. */
+"Black Raspberry" = "توت أسود";
+
+/* Blueberry-flavored dough. */
+"Blueberry Dough" = "عجينة التوت الأزرق";
+
+/* Blueberry-flavored icing drizzled over the donut. */
+"Blueberry Drizzle" = "صلصة التوت الأزرق";
+
+/* A donut-flavor name. */
+"Blueberry Frosted" = "غطاء التوت الأزرق";
+
+/* Blueberry-flavored icing in a criss-cross pattern. */
+"Blueberry Lattice" = "مشبك التوت الأزرق";
+
+/* Blueberry-flavored icing in parallel lines. */
+"Blueberry Lines" = "خطوط التوت الأزرق";
+
+/* Blueberry-flavored glaze. */
+"Blueberry Spread" = "مدهون التوت الأزرق";
+
+/* A landmark in London. */
+"Buckingham Palace" = "قصر باكنجهام";
+
+/* Chocolate-flavored dough. */
+"Chocolate Dough" = "عجينة الشوكولاتة";
+
+/* Blueberry-flavored icing drizzled over the donut. */
+"Chocolate Drizzle" = "صلصة الشوكولاتة";
+
+/* Chocolate-flavored glaze. */
+"Chocolate Glaze" = "طبقة الشوكولاتة";
+
+/* Chocolate-flavored icing in a criss-cross pattern. */
+"Chocolate Lattice" = "مشبك الشوكولاتة";
+
+/* Chocolate-flavored icing in parallel lines. */
+"Chocolate Lines" = "خطوط الشوكولاتة";
+
+/* A landmark in San Francisco. */
+"Coit Tower" = "برج كويت";
+
+/* Order status. */
+"Completed" = "مكتمل";
+
+/* A donut-flavor name. */
+"Cosmos" = "كوسموس";
+
+/* A city in California. */
+"Cupertino" = "كوبرتينو";
+
+/* A donut-flavor name. */
+"Custard" = "كاسترد";
+
+/* A donut-flavor name. */
+"Daytime" = "النهارية ";
+
+/* A landmark in San Francisco. */
+"Ferry Building" = "مبنى العبارة";
+
+/* A donut-flavor name. */
+"Figure Skater" = "رشيقة";
+
+/* A donut-flavor name. */
+"Fire Zest" = "حراقة";
+
+/* A landmark in San Francisco. */
+"Fisherman's Wharf" = "مرسى الصيادين";
+
+/* A landmark in San Francisco. */
+"Golden Gate Bridge" = "جسر البوابة الذهبية";
+
+/* One of Apple's buildings in California. */
+"Infinite Loop" = "إنفينيت لوب";
+
+/* A donut-flavor name. */
+"Lemon Chocolate" = "شوكولاتة الليمون";
+
+/* Lemon-flavored icing drizzled over the donut. */
+"Lemon Drizzle" = "صلصة الليمون";
+
+/* Lemon-flavored icing in a criss-cross pattern. */
+"Lemon Lattice" = "مشبك الليمون";
+
+/* Lemon-flavored icing in parallel lines. */
+"Lemon Lines" = "خطوط الليمون";
+
+/* Lemon-flavored glaze. */
+"Lemon Spread" = "مدهون الليمون";
+
+/* Lemonade-flavored dough. */
+"Lemonade" = "ليموناضة";
+
+/* A city in England. */
+"London" = "لندن";
+
+/* A landmark in London. */
+"Marble Arch" = "قوس الرخام";
+
+/* New donut-placeholder name. */
+"New Donut" = "دونات جديدة";
+
+/* A donut-flavor name. */
+"Nighttime" = "الليلية";
+
+/* A landmark in San Francisco. */
+"Oracle Park" = "استاد أوراكل بارك";
+
+/* Order label. */
+"Order" = "طلب";
+
+/* A landmark in London. */
+"Piccadilly Circus" = "ميدان بيكاديلي";
+
+/* A donut-flavor name. */
+"Picnic Basket" = "سلة النزهة";
+
+/* Order status. */
+"Placed" = "تم إرساله";
+
+/* Plain donut dough. */
+"Plain" = "سادة";
+
+/* A donut-flavor name. */
+"Powdered Chocolate" = "بودرة الشوكولاتة";
+
+/* Powdered donut dough. */
+"Powdered Dough" = "بودرة الدوه";
+
+/* A donut-flavor name. */
+"Powdered Strawberry" = "بودرة الفراولة";
+
+/* Finely ground sugar to decorate or add texture. */
+"Powdered Sugar" = "بودرة السكر";
+
+/* Order status. */
+"Preparing" = "يتم تحضيره";
+
+/* A donut-flavor name. */
+"Rainbow" = "قوس قزح";
+
+/* Rainbow-colored glaze. */
+"Rainbow Glaze" = "طبقة القوس قزح";
+
+/* Order status. */
+"Ready" = "جاهز";
+
+/* The main flavor-profile of a donut. */
+"Salty" = "مالحة";
+
+/* A city in California. */
+"San Francisco" = "سان فرانسيسكو";
+
+/* The main flavor-profile of a donut. */
+"Savory" = "سافوري";
+
+/* A landmark in London. */
+"Shakespeare's Globe" = "شكسبير جلوب";
+
+/* The main flavor-profile of a donut. */
+"Sour" = "حامضة";
+
+/* Sour-apple-flavored icing drizzled over the donut. */
+"Sour Apple Drizzle" = "صلصة التفاح الحامض";
+
+/* Sour-apple-flavored icing in a criss-cross pattern. */
+"Sour Apple Lattice" = "مشبك التفاح الحامض";
+
+/* Sour-apple-flavored icing in parallel lines. */
+"Sour Apple Lines" = "خطوط التفاح الحامض";
+
+/* Sour-candy-flavored dough. */
+"Sour Candy" = "قطع الحلوى الحامضة";
+
+/* Sour-candy-flavored glaze. */
+"Sour Candy Glaze" = "طبقة الحلوى الحامضة";
+
+/* The main flavor-profile of a donut. */
+"Spicy" = "حارَّة";
+
+/* Spicy-sauce-flavored icing drizzled over the donut. */
+"Spicy Sauce Drizzle" = "الصلصة الحارَّة";
+
+/* Spicy-sauce-flavored icing in a criss-cross pattern. */
+"Spicy Sauce Lattice" = "مشبك الصلصة الحارَّة";
+
+/* Spicy-sauce-flavored icing in parallel lines. */
+"Spicy Sauce Lines" = "خطوط الصلصة الحارَّة";
+
+/* Spicy glaze. */
+"Spicy Spread" = "مدهون حار";
+
+/* Small pieces of confectionery to decorate or add texture. */
+"Sprinkles" = "مرشوش";
+
+/* Star-shaped pieces of confectionery to decorate or add texture. */
+"Star Sprinkles" = "مرشوش النجوم";
+
+/* Strawberry-flavored dough. */
+"Strawberry Dough" = "عجينة الفراولة";
+
+/* Strawyberry-flavored icing drizzled over the donut. */
+"Strawberry Drizzle" = "صلصة الفراولة";
+
+/* Strawberry-flavored glaze. */
+"Strawberry Glaze" = "طبقة الفراولة";
+
+/* Strawberry-flavored icing in a criss-cross pattern. */
+"Strawberry Lattice" = "مشبك الفراولة";
+
+/* Strawberry-flavored icing in parallel lines. */
+"Strawberry Lines" = "خطوط الفراولة";
+
+/* A donut-flavor name. */
+"Strawberry Sprinkles" = "مرشوش الفراولة";
+
+/* Sugar-flavored icing drizzled over the donut. */
+"Sugar Drizzle" = "صلصة السكر";
+
+/* Sugar-flavored icing in a criss-cross pattern. */
+"Sugar Lattice" = "مشبك السكر";
+
+/* Sugar-flavored icing in parallel lines. */
+"Sugar Lines" = "خطوط السكر";
+
+/* A donut-flavor name. */
+"Super Lemon" = "سوبر ليمون";
+
+/* A landmark in San Francisco. */
+"Sutro Tower" = "برج سوترو";
+
+/* The main flavor-profile of a donut. */
+"Sweet" = "حلوة";
+
+/* A landmark in San Francisco. */
+"The Castro Theatre" = "مسرح كاسترو";
+
+/* A donut-flavor name. */
+"The Classic" = "الكلاسيكية";
+
+/* Date label used to display or filter content by date. */
+"Today" = "اليوم";
+
+/* A landmark in London. */
+"Tower Bridge" = "جسر البرج";
+
+/* Date label used to display or filter content by date. */
+"Yesterday" = "الأمس";
+

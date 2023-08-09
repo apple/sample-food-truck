@@ -45,7 +45,7 @@ struct DonutEditor: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbarRole(.editor)
         // We don't want store messages to interrupt any donut editing.
-        .storeMessagesDeferred(true)
+//        .storeMessagesDeferred(true)
     }
     
     var donutViewer: some View {
