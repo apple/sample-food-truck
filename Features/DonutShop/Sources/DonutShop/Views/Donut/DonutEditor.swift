@@ -6,11 +6,20 @@ The donut editor view.
 */
 
 import SwiftUI
-//import FoodTruckKit
+import Decide
+
+final class NewDonut {
+    final class Donut: KeyedState<Int> {
+        @Mutable @Property
+        var name = "New Donut"
+    }
+}
 
 struct DonutEditor: View {
     @Binding var donut: Donut
-    
+
+    @BindKeyed(\NewDonut.Donut.$name) var name
+
     var body: some View {
         ZStack {
             WidthThresholdReader { proxy in
@@ -60,7 +69,8 @@ struct DonutEditor: View {
     @ViewBuilder
     var editorContent: some View {
         Section("Donut") {
-            TextField("Name", text: $donut.name, prompt: Text("Donut Name"))
+            TextField("Name", text: name.makeBinding(donut.id), prompt: Text("Donut Name"))
+//            TextField("Name", text: name[donut.id], prompt: Text("Donut Name"))
         }
         
         Section("Flavor Profile") {
