@@ -125,8 +125,6 @@ enum BrowserLayout: String, Identifiable, CaseIterable {
 
 struct DonutBakery_Previews: PreviewProvider {
     struct Preview: View {
-        @StateObject private var model = FoodTruckModel.preview
-
         var body: some View {
             DonutGallery()
         }
