@@ -6,9 +6,10 @@ The grid view used in the DonutGallery.
 */
 
 import SwiftUI
+import Decide
 
 struct DonutGalleryGrid: View {
-    var donuts: [Donut]
+    @Observe(\FoodTruckState.$donuts) var donuts
     var width: Double
     
     @Environment(\.horizontalSizeClass) private var sizeClass
@@ -45,7 +46,7 @@ struct DonutGalleryGrid: View {
     var body: some View {
         LazyVGrid(columns: gridItems, spacing: 20) {
             ForEach(donuts) { donut in
-                NavigationLink(value: donut.id) {
+                NavigationLink(value: donut) {
                     VStack {
                         DonutView(donut: donut)
                             .frame(width: thumbnailSize, height: thumbnailSize)
@@ -77,7 +78,7 @@ struct DonutGalleryGrid_Previews: PreviewProvider {
         var body: some View {
             GeometryReader { geometryProxy in
                 ScrollView {
-                    DonutGalleryGrid(donuts: donuts, width: geometryProxy.size.width)
+                    DonutGalleryGrid(width: geometryProxy.size.width)
                 }
             }
         }

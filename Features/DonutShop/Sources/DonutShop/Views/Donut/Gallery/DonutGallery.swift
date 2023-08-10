@@ -6,17 +6,19 @@ The donut gallery view.
 */
 
 import SwiftUI
+import Decide
 
 struct DonutGallery: View {
-    @ObservedObject var model: FoodTruckModel
+    @Observe(\FoodTruckState.$donuts) var donuts
+    @Bind(\FoodTruckState.$editorDonut) var selectedDonut
     
     @State private var layout = BrowserLayout.grid
-
+    
     @State private var selection = Set<Donut.ID>()
     @State private var searchText = ""
     
     var filteredDonuts: [Donut] {
-        model.donuts.filter { $0.matches(searchText: searchText) }
+        donuts.filter { $0.matches(searchText: searchText) }
     }
     
     var tableImageSize: Double {
@@ -38,20 +40,26 @@ struct DonutGallery: View {
                 toolbarItems
             }
         }
-        .searchable(text: $searchText)
+//        .searchable(text: $searchText)
         .navigationTitle("Donuts")
-        .navigationDestination(for: Donut.ID.self) { donutID in
+        .navigationDestination(for: Donut.self) { donut in
             DonutEditor()
+                .onAppear {
+                    selectedDonut = donut
+                }
         }
-        .navigationDestination(for: String.self) { _ in
+        .navigationDestination(for: String.self) { donut in
             DonutEditor()
+                .onAppear {
+                    selectedDonut = Donut.newDonut
+                }
         }
     }
     
     var grid: some View {
         GeometryReader { geometryProxy in
             ScrollView {
-                DonutGalleryGrid(donuts: filteredDonuts, width: geometryProxy.size.width)
+                DonutGalleryGrid(width: geometryProxy.size.width)
             }
         }
     }
@@ -120,7 +128,7 @@ struct DonutBakery_Previews: PreviewProvider {
         @StateObject private var model = FoodTruckModel.preview
 
         var body: some View {
-            DonutGallery(model: model)
+            DonutGallery()
         }
     }
 
