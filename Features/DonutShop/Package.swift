@@ -14,7 +14,7 @@ let package = Package(
             targets: ["DonutShop"]),
     ],
     dependencies: [
-        .package(url: "git@github.com:MaximBazarov/Decide.git", .upToNextMajor(from: "0.0.1"))
+        .package(url: "git@github.com:MaximBazarov/Decide.git", .upToNextMajor(from: "0.1.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

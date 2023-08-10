@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "decide",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:MaximBazarov/Decide.git",
+      "state" : {
+        "revision" : "fdae42e2732f5e13d30efbe25fbbeb3fe8113c4b",
+        "version" : "0.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}
