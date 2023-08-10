@@ -8,15 +8,10 @@ The donut editor view.
 import SwiftUI
 import Decide
 
-final class NewDonutState: AtomicState {
-    @Mutable @Property
-    var donut = Donut.preview
-}
-
 struct DonutEditor: View {
-
-    @Bind(\NewDonutState.$donut) var donut
-
+    
+    @Bind(\FoodTruckState.$editorDonut) var donut
+    
     var body: some View {
         ZStack {
             WidthThresholdReader { proxy in
@@ -47,7 +42,7 @@ struct DonutEditor: View {
                 }
             }
         }
-        .navigationTitle($donut.name)
+        .navigationTitle(donut.name)
         .navigationBarTitleDisplayMode(.inline)
         .toolbarRole(.editor)
     }

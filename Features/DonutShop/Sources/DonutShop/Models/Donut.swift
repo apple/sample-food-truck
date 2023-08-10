@@ -198,6 +198,14 @@ public extension Donut {
     ]
     
     static var preview: Donut { .classic }
+
+    static var newDonut = Donut(
+        id: Donut.all.count,
+        name: String(localized: "New Donut", comment: "New donut-placeholder name."),
+        dough: .plain,
+        glaze: .chocolate,
+        topping: .sprinkles
+    )
 }
 
 public extension UTType {
