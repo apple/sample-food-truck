@@ -61,84 +61,20 @@ struct DonutEditor: View {
         Section("Donut") {
             TextField("Name", text: $donut.name, prompt: Text("Donut Name"))
         }
-        
-        Section("Flavor Profile") {
-            Grid {
-                let (topFlavor, topFlavorValue) = donut.flavors.mostPotent
-                ForEach(Flavor.allCases) { flavor in
-                    let isTopFlavor = topFlavor == flavor
-                    let flavorValue = max(donut.flavors[flavor], 0)
-                    GridRow {
-                        flavor.image
-                            .foregroundStyle(isTopFlavor ? .primary : .secondary)
-                        
-                        Text(flavor.name)
-                            .gridCellAnchor(.leading)
-                            .foregroundStyle(isTopFlavor ? .primary : .secondary)
-                        
-                        Gauge(value: Double(flavorValue), in: 0...Double(topFlavorValue)) {
-                            EmptyView()
-                        }
-                        .tint(isTopFlavor ? Color.accentColor : Color.secondary)
-                        .labelsHidden()
-                        
-                        Text(flavorValue.formatted())
-                            .gridCellAnchor(.trailing)
-                            .foregroundStyle(isTopFlavor ? .primary : .secondary)
-                    }
-                }
-            }
+
+        Section("Flavor profile") {
+            DonatFlavorDetailsView(
+                mostPotentFlavor: donut.flavors.mostPotent,
+                flavors: donut.flavors
+            )
         }
         
         Section("Ingredients") {
-            Picker("Dough", selection: $donut.dough) {
-                ForEach(Donut.Dough.all) { dough in
-                    Text(dough.name)
-                        .tag(dough)
-                }
-            }
-            
-            Picker("Glaze", selection: $donut.glaze) {
-                Section {
-                    Text("None")
-                        .tag(nil as Donut.Glaze?)
-                }
-                ForEach(Donut.Glaze.all) { glaze in
-                    Text(glaze.name)
-                        .tag(glaze as Donut.Glaze?)
-                }
-            }
-            
-            Picker("Topping", selection: $donut.topping) {
-                Section {
-                    Text("None")
-                        .tag(nil as Donut.Topping?)
-                }
-                Section {
-                    ForEach(Donut.Topping.other) { topping in
-                        Text(topping.name)
-                            .tag(topping as Donut.Topping?)
-                    }
-                }
-                Section {
-                    ForEach(Donut.Topping.lattices) { topping in
-                        Text(topping.name)
-                            .tag(topping as Donut.Topping?)
-                    }
-                }
-                Section {
-                    ForEach(Donut.Topping.lines) { topping in
-                        Text(topping.name)
-                            .tag(topping as Donut.Topping?)
-                    }
-                }
-                Section {
-                    ForEach(Donut.Topping.drizzles) { topping in
-                        Text(topping.name)
-                            .tag(topping as Donut.Topping?)
-                    }
-                }
-            }
+            DoughPicker(dough: $donut.dough)
+
+            GlazePicker(glaze: $donut.glaze)
+
+            ToppingPicker(topping: $donut.topping)
         }
     }
 }
@@ -146,13 +82,13 @@ struct DonutEditor: View {
 struct DonutEditor_Previews: PreviewProvider {
     struct Preview: View {
         var body: some View {
-            DonutEditor()
+            NavigationView {
+                DonutEditor()
+            }
         }
     }
 
     static var previews: some View {
-        NavigationStack {
-            Preview()
-        }
+        Preview()
     }
 }
