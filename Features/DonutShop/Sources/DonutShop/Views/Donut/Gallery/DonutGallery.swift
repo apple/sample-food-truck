@@ -10,8 +10,8 @@ import Decide
 
 struct DonutGallery: View {
     @Observe(\FoodTruckState.$donuts) var donuts
-    @Bind(\FoodTruckState.$editorDonut) var selectedDonut
-    
+    @Bind(\FoodTruckState.$detailsDonut) var selectedDonut
+
     @State private var layout = BrowserLayout.grid
     
     @State private var selection = Set<Donut.ID>()
@@ -43,7 +43,7 @@ struct DonutGallery: View {
 //        .searchable(text: $searchText)
         .navigationTitle("Donuts")
         .navigationDestination(for: Donut.self) { donut in
-            DonutEditor()
+            DonutDetailsView()
                 .onAppear {
                     selectedDonut = donut
                 }
