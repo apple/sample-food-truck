@@ -13,38 +13,24 @@ struct DonutEditor: View {
     @Bind(\FoodTruckState.$editorDonut) var donut
     
     var body: some View {
-        ZStack {
-            WidthThresholdReader { proxy in
-                if proxy.isCompact {
+        WidthThresholdReader { proxy in
+            if proxy.isCompact {
+                Form {
+                    donutViewer
+                    editorContent
+                }
+            } else {
+                HStack(spacing: 0) {
+                    donutViewer
+                    Divider().ignoresSafeArea()
                     Form {
-                        donutViewer
                         editorContent
                     }
-                } else {
-                    HStack(spacing: 0) {
-                        donutViewer
-                        Divider().ignoresSafeArea()
-                        Form {
-                            editorContent
-                        }
-                        .formStyle(.grouped)
-                        .frame(width: 350)
-                    }
+                    .formStyle(.grouped)
+                    .frame(width: 350)
                 }
             }
         }
-        .toolbar {
-            ToolbarTitleMenu {
-                Button {
-
-                } label: {
-                    Label("My Action", systemImage: "star")
-                }
-            }
-        }
-        .navigationTitle(donut.name)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbarRole(.editor)
     }
     
     var donutViewer: some View {
