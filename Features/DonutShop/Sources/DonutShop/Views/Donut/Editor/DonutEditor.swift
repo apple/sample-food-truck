@@ -10,7 +10,7 @@ import Decide
 
 struct DonutEditor: View {
     
-    @Bind(\FoodTruckState.$editorDonut) var donut
+    @Bind(\FoodTruckState.$selectedDonut) var donut
     
     var body: some View {
         WidthThresholdReader { proxy in

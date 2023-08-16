@@ -10,7 +10,7 @@ import Decide
 
 struct DonutGallery: View {
     @Observe(\FoodTruckState.$donuts) var donuts
-    @Bind(\FoodTruckState.$detailsDonut) var selectedDonut
+    @Bind(\FoodTruckState.$selectedDonut) var selectedDonut
 
     @State private var layout = BrowserLayout.grid
     

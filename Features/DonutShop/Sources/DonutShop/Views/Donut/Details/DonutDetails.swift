@@ -8,9 +8,8 @@
 import SwiftUI
 import Decide
 
-
 struct DonutDetailsView: View {
-    @Bind(\FoodTruckState.$detailsDonut) var detailsDonut
+    @Bind(\FoodTruckState.$selectedDonut) var detailsDonut
 
     var body: some View {
         DonutDetails()
@@ -59,7 +58,7 @@ struct DonutDetailsPreview: PreviewProvider {
 class DonutDetailsTableViewController: UITableViewController, EnvironmentObservingObject {
 
     @DefaultEnvironment var environment
-    @DefaultBind(\FoodTruckState.$detailsDonut) var donut
+    @DefaultBind(\FoodTruckState.$selectedDonut) var donut
 
     func environmentDidUpdate() {
         _ = donut // we need to read property in order to subscribe.
