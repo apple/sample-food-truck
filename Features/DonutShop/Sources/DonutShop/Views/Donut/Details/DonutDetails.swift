@@ -9,6 +9,7 @@ import SwiftUI
 import Decide
 
 struct DonutDetailsView: View {
+    @State private var isPresentingEditor = false
     @Bind(\FoodTruckState.$selectedDonut) var detailsDonut
 
     var body: some View {
@@ -20,10 +21,15 @@ struct DonutDetailsView: View {
             .toolbar {
                 ToolbarItemGroup {
                     Button {
-
+                        isPresentingEditor = true
                     } label: {
                         Label("Edit", systemImage: "pencil")
                     }
+                }
+            }
+            .fullScreenCover(isPresented: $isPresentingEditor) {
+                NavigationView {
+                    DetailsDonutEditor()
                 }
             }
     }
@@ -62,6 +68,7 @@ class DonutDetailsTableViewController: UITableViewController, EnvironmentObservi
 
     func environmentDidUpdate() {
         _ = donut // we need to read property in order to subscribe.
+        tableView.reloadData()
     }
 
     let sections = ["", "Flavor profile", "Ingredients"]
@@ -141,6 +148,7 @@ class DonutDetailsTableViewController: UITableViewController, EnvironmentObservi
         let ingredient = getIngredient(for: indexPath)
         cell.nameLabel.text = ingredientsTitles[indexPath.row]
         cell.valueLabel.text = ingredient?.name ?? "None"
+        cell.selectionStyle = .none
         return cell
     }
 
